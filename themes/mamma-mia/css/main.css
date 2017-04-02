@@ -1,0 +1,591 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 28, 2017, 6:07:18 PM
+    Author     : o0BAMBAM0o
+*/
+
+body {
+	background: #dfd6c8 url(../images/beach-full-size.jpg) no-repeat center 30%;
+	overflow-x:hidden;
+
+}
+
+.main-block {
+	width:80%;
+	max-width: 1800px;
+	background:white url(../images/marble.jpg);
+	padding:20px;
+	margin: 20px auto;
+	box-shadow: 2px 2px 20px 2px rgba(0,0,0,0.3);
+	position:relative;
+	z-index:100;
+}
+
+header h1 {
+	text-align: center;
+	margin-top:0;
+}
+
+header h1 span {
+	margin-right:4px;
+	display:inline-block;
+	font-size:104%;
+}
+
+header h1 .btn {
+	margin-top:-7px;
+	margin-left:6px;
+}
+
+header h1 div {
+	display: inline-block;
+}
+
+#location {
+	font-size: 56%;
+	line-height: 16px;
+	padding-top: 8px;
+	display: inline-block;
+	text-align:left;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.ribbon {
+	width: 86.2%;
+	max-width: 1800px;
+	height: 80px;
+	margin: 0px auto; 
+	position: relative;
+	margin-bottom:-30px;
+}
+
+.one.fixed > div {
+	position: fixed;
+}
+
+.ribbon.fixed .ribbon-main {
+	width: 81%;
+    left: 54.5%;
+}
+
+.ribbon.fixed .bk {
+	width:6.85%;
+
+}
+
+.ribbon.fixed .bk.l {
+	left:6.9%;
+}
+
+.ribbon.fixed .bk.r {
+	right:6.9%;
+}
+
+.ribbon.fixed .skew {
+	top:4px;
+}
+
+.ribbon.fixed .skew.l {
+	left:10.8%
+}
+.ribbon.fixed .skew.r {
+	right:10.8%
+}
+
+.one > div {
+	height: 50px;
+}
+
+.ribbon-main {
+	background: #50B2EA; 
+	position: relative;
+	display: block;
+	width: 94%;
+	left: 48%;
+	top: 0;
+	padding: 5px;
+	margin-left: -45%;
+	z-index: 300;
+}
+
+.ribbon-main > div {
+	border: 1px dashed #fff;
+	border-color: rgba(255, 255, 255, 0.5);
+	height: 40px;
+}
+
+.ribbon-main:after {
+	content:'';
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    width: 99.5%;
+    display: block;
+    box-shadow: 0px 2px 6px 1px; black;
+}
+
+
+
+.bk {
+	background: #29A1E6;
+	position: absolute;
+	width: 8%;
+	top: 12px;
+}
+
+.bk.l {
+	left: 0;
+}
+
+.bk.r {
+	right: 0;
+}
+
+.skew {
+	position: absolute;
+	background: #178ACC;
+	width: 3%;
+	top: 6px;
+	z-index: 5;
+}
+
+.skew.l {
+	left: 5%;
+	transform: skew(00deg,20deg);
+}
+
+.skew.r {
+	right: 5%;
+	transform: skew(00deg,-20deg);
+}
+
+.bk.l > div {
+	left: -30px;
+}
+
+.bk.r > div {
+	right: -30px;
+}
+
+.arrow {
+	height: 25px !important;
+	position: absolute;
+	z-index: 2;
+	width: 0; 
+	height: 0; 
+}
+
+.arrow.top {
+	top: 0px;
+	border-top: 0px solid transparent;
+	border-bottom: 25px solid transparent; 	
+	border-right: 30px solid #29A1E6; 
+}
+
+.arrow.bottom {
+	top: 25px;
+	border-top: 25px solid transparent;
+	border-bottom:0px solid transparent; 	
+	border-right: 30px solid #29A1E6; 
+}
+
+.r .bottom {
+	border-top: 25px solid transparent;
+	border-bottom: 0px solid transparent; 	
+	border-left: 30px solid #29A1E6; 
+	border-right: none;
+}
+
+.r .top {
+	border-bottom: 25px solid transparent;
+	border-top: 0px solid transparent; 	
+	border-left: 30px solid #29A1E6; 
+	border-right: none;
+}
+
+
+.ribbon li {
+	list-style:none;
+	float:left;
+	margin:6px 4px;
+
+}
+.ribbon ul a, .ribbon ul label {
+	display:block;
+	text-decoration:none;
+	color:inherit;
+	padding:2px 6px;
+	color:white;
+	font-weight:bold;
+	background-color:#219EE5;
+	border-radius:5px;
+	border:1px solid transparent;
+	cursor:pointer;
+}
+.ribbon ul {margin:0 16px;}
+
+.ribbon li a:hover,
+.ribbon li label:hover {  
+	background:#178acc;
+	border-color: rgba(255,255,255,0.5);
+}
+
+.ribbon li .btn-danger:hover {  
+	background:#B6191F;
+}
+
+.ribbon li.active a, 
+.ribbon li.active label {  
+	background:#178acc;
+	border-color: rgba(255,255,255,0.8);
+}
+
+.ribbon li.menu {
+	display:none;
+}
+
+
+.headline {
+	text-align:center;
+	font-size:2em;
+	line-height: 1;
+}
+.headline-logo {
+
+	background: url("../images/mammamia.png") center center no-repeat;
+	background-size: contain;
+	margin-bottom:10px;
+	text-shadow: none;
+    color: transparent;
+	border: 0;
+
+}
+.headline-logo:after {
+	content:"\7F";	
+	font-size:300%;
+}
+.headline-logo span {
+    font: 0/0 a;
+}
+.headline-by, .headline-small-credit{
+	font-size:45%;
+}
+.headline-main-credit {
+	font-size:100%;
+}
+
+.headline-mid-credit {
+	font-size:70%;
+}
+
+.headline-mid-row {
+	line-height:70%
+}
+
+.module {
+	background-color: #178acc;
+    padding: 10px;
+    border: 15px solid transparent;
+    background-clip: padding-box;
+	border-radius: 17px;
+}
+
+.module .module-inner {
+	background-color:white;
+}
+
+.module h1, .module h2 {
+	color:white;
+}
+
+.module .module-title {
+	color:white;
+	margin-top:0;
+}
+
+header > div, nope.module.row > div {
+	border-left:2px solid rgba(255,255,255,0.2);
+	border-right:2px solid rgba(125,125,125,0.2)
+}
+
+.actions h2, .module-title, .ribbon li, h1 {
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+h1 small {
+	text-shadow:initial;
+	display:inline-block;
+}
+
+.actions {
+	border-top: 1px solid rgba(255,255,255,0.25);
+    padding: 5px;
+    margin-top: 30px;
+    position: relative;
+}
+.actions h2 {
+	position: relative;
+    top: -25px;
+    margin: 0 auto -20px;
+    width: 50%;
+    display: block;
+    background: #178acc;
+    left: 0;
+    text-align: center;
+}
+.actions p, .module p {
+	background-color: rgba(255,255,255, 0.75);
+    padding: 10px;
+	margin:0;
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+#wrapper {
+	position:relative;
+	z-index:50;
+}
+.curtain {
+	position: absolute;
+    height: 1700px;
+    width: 25%;
+    background: url(../images/curtain.png) right -60px no-repeat;
+    top: 0;
+    z-index: 1;
+	transition: all 100ms linear;
+
+
+}
+.curtain-right {
+
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+	left:inherit;
+	right:0;
+}	
+
+.ticket-seat {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border: 1px solid #transparent;
+    margin: 1px;
+    border-radius: 3px 3px 0 0;
+    cursor: pointer;
+    
+}
+
+span.ticket-seat:before {
+    content: " ";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 4px;
+    width: 4px;
+    background: black;
+    border-radius: 4px;
+}
+
+.ticket-section {
+	padding: 6px;
+    display: inline-block;
+    margin: 6px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.ticket-section.ticket-price-group-B {
+	background-color:lightyellow;
+}
+.ticket-section.ticket-price-group-A {
+	background-color:lightblue;
+}
+
+.ticket-section:hover {
+    border: 1px solid grey;
+	background-color: hotpink;
+	
+}
+
+.ticket-seat:hover {
+	background-color:lightgreen;
+	border: 1px solid #999;
+
+}
+
+
+
+.ticket-section.no-left-margin {
+	margin-left:0;
+	padding-left:0;
+	transform-origin:left;
+	border-radius:0 5px 5px 0;
+}
+.ticket-section.no-right-margin {
+	margin-right:0;
+	padding-right:0;
+	transform-origin:right;	
+	border-radius:5px 0 0 5px;
+}
+
+.ticket-section.rotate-10-ccw {
+	transform: rotate(-10deg);
+}
+
+.ticket-section.rotate-10-cw {
+	transform: rotate(10deg);
+}
+
+.ticket-section.break-13 .ticket-seat:nth-of-type(13),
+.ticket-section.break-26 .ticket-seat:nth-of-type(23) {
+	margin-right:20px;;
+}
+
+.tickets .tickets-stage {
+	border-top: 12px solid #ccc;
+    width: 80%;
+    height: 500px;
+    border-radius: 30%;
+    position: relative;
+    color: #666;
+}
+
+.tickets .tickets-stage:after {
+	content: 'stage';
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    font-size: 100;
+    text-transform: uppercase;
+}
+
+@media all and (max-width: 1020px) {
+	.skew.l {
+		left: 5%;
+		transform: skew(00deg,25deg);
+	}
+
+	.skew.r {
+		right: 5%;
+		transform: skew(00deg,-25deg);
+	}
+	.curtain {
+		width: 40%;
+	}
+}
+
+@media all and (max-width: 990px) {
+	header {
+		text-align:center;
+	}
+	header h1 span.pull-left {
+		
+		float:none !important;
+	}
+	header h1 small {
+		text-align:left;
+	}
+}
+
+@media all and (max-width: 680px) {
+	.skew.l {
+		left: 5%;
+		transform: skew(00deg,30deg);
+	}
+
+	.skew.r {
+		right: 5%;
+		transform: skew(00deg,-30deg);
+	}
+	.curtain {
+		width: 50%;
+	}
+	
+	.ribbon li.menu {
+		display:block;
+	}
+	
+	.ribbon ul {
+		background-color: #50B2EA;
+		margin: 0;
+		padding: 10px;
+		padding:0 10px;
+		max-height:0px;
+		overflow:hidden;
+		transition:all 200ms linear, margin 0ms linear;
+
+	}
+	
+	#menu-toggle:checked ~ ul {
+		max-height:inherit;
+		margin-top: 43px;
+		padding:10px;
+		z-index: 0;
+		box-shadow: 0px 4px 9px -2px;
+	}
+	
+	#menu-toggle:checked ~ ul li.menu label {
+		background:#178acc;
+		border-color: rgba(255,255,255,0.8);
+	} 
+	
+	.ribbon ul li.menu-item {
+		font-size:150%;
+	}
+	
+	.ribbon ul li.menu {
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		display: block;
+	}
+	.ribbon ul li.menu label {
+		padding-left:18px;
+	}
+	.ribbon ul li.menu label:before {
+		content: "";
+		position: absolute;
+		left: 5px;
+		top: 8px;
+		
+		width: 0.75em;
+		height: 0.15em;
+		background: white;
+		box-shadow: 
+		  0 0.25em 0 0 white,
+		  0 0.5em 0 0 white;
+	}
+	
+	.ribbon ul li {
+		float:none;
+	}
+	
+	.ribbon ul li.book {
+		position: absolute;
+		top: 6px;
+		right: 6px;
+	}
+	
+}
+
+@media all and (max-width: 460px) {
+	.skew.l {
+		left: 5%;
+		transform: skew(00deg,40deg);
+	}
+	.skew.r {
+		right: 5%;
+		transform: skew(00deg,-40deg);
+	}
+
+}
