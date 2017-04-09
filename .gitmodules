@@ -1,0 +1,3 @@
+[submodule "silverstripe-bootstrap-forms"]
+	path = silverstripe-bootstrap-forms
+	url = https://github.com/unclecheese/silverstripe-bootstrap-forms.git

@@ -22,7 +22,9 @@
 			
 			<div class="main-block">
 				$Layout 
+				$Form
 			</div>
 		</div>
+		<a class="return-to-top" href="javascript:" id="return-to-top"></a>
     </body>
 </html>

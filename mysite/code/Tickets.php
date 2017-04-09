@@ -12,14 +12,114 @@
  * @author o0BAMBAM0o
  */
 class Tickets extends Page {
+	static $has_many = array(
+		'Perfomances' => 'Perfomance',
+		'Sections' => 'Section'
+	);
 
+	public function getCMSFields() {
+        // Get the fields from the parent implementation
+        $fields = parent::getCMSFields();
+        // Create a default configuration for the new GridField, allowing record editing
+        $config = GridFieldConfig_RelationEditor::create();
+        // Set the names and data for our gridfield columns
+        $config->getComponentByType('GridFieldDataColumns')->setDisplayFields(array(
+			'Title' => 'Title',
+			'Date' => 'Date',
+			'Time' => 'Time',
+        ));
+
+        $sectionField = new GridField(
+            'Perfomance', // Field name
+            'Perfomances', // Field title
+            $this->Perfomances(),
+            $config
+        );
+        // Create a tab named "Students" and add our field to it
+        $fields->addFieldToTab('Root.Main', $sectionField);
+		return $fields;
+	}
 	
 
 }
 
 class Tickets_Controller extends Page_Controller {
 	protected $sections = array(
+		'T3' => array(
+			'PriceGroup' => 'B',
+			'Width' => 23,
+			'Rows' => 5,
+			'StartRow' => 'y',
+ 			'StartSeat' => '11',
 
+		),
+		'T4' => array(
+			'PriceGroup' => 'B',
+			'Width' => 19,
+			'Rows' => 5,
+			'StartRow' => 'y',
+ 			'StartSeat' => '34',
+
+		),
+		'T1' => array(
+			'PriceGroup' => 'B',
+			'Width' => 3,
+			'Rows' => 9,
+			'StartRow' => 'n',
+ 			'StartSeat' => '1',
+ 			'Structure' => array(
+				5, 3, 3, 3, 3, 3, 3, 3, 3
+			),
+			'Class' => 'no-right-margin rotate-10-ccw'
+		),
+		'T2' => array(
+			'PriceGroup' => 'A',
+			'Width' => 6,
+			'Rows' => 9,
+			'StartRow' => 'n',
+ 			'StartSeat' => '6',
+			'Class' => 'no-left-margin rotate-10-ccw'
+
+		),
+		'F5' => array(
+			'PriceGroup' => 'B',
+			'Width' => 36,
+			'Rows' => 5,
+			'StartRow' => 's',
+			'StartSeat' => 12,
+			'Class' => 'break-13 break-26 no-bottom-margin'
+
+		),
+		'F4' => array(
+			'PriceGroup' => 'A',
+			'Width' => 36,
+			'Rows' => 5,
+			'StartRow' => 'n',
+			'StartSeat' => 12,
+			'Class' => 'break-13 break-26 no-top-margin'
+		),
+
+		
+		'T5' => array(
+			'PriceGroup' => 'A',
+			'Width' => 6,
+			'Rows' => 9,
+			'StartRow' => 'n',
+ 			'StartSeat' => '48',
+			'Class' => 'no-right-margin rotate-10-cw'
+
+		),
+		'T6' => array(
+			'PriceGroup' => 'B',
+			'Width' => 3,
+			'Rows' => 9,
+			'StartRow' => 'n',
+ 			'StartSeat' => '54',
+ 			'Structure' => array(
+				5, 3, 3, 3, 3, 3, 3, 3, 3
+			),
+			'Class' => 'no-left-margin rotate-10-cw text-right'
+		),
 		'F1' => array(
 			'PriceGroup' => 'B',
 			'Width' => 16,
@@ -48,83 +148,11 @@ class Tickets_Controller extends Page_Controller {
 				16,15,14,13,12,11,10,9,8,7,6,5,4
 			)
 		),
-		'T1' => array(
-			'PriceGroup' => 'B',
-			'Width' => 3,
-			'Rows' => 9,
-			'StartRow' => 'n',
- 			'StartSeat' => '1',
- 			'Structure' => array(
-				5, 3, 3, 3, 3, 3, 3, 3, 3
-			),
-			'Class' => 'no-right-margin rotate-10-ccw'
-		),
-		'T2' => array(
-			'PriceGroup' => 'A',
-			'Width' => 6,
-			'Rows' => 9,
-			'StartRow' => 'n',
- 			'StartSeat' => '6',
-			'Class' => 'no-left-margin rotate-10-ccw'
 
-		),
-		'F4' => array(
-			'PriceGroup' => 'A',
-			'Width' => 36,
-			'Rows' => 5,
-			'StartRow' => 'n',
-			'StartSeat' => 12,
-			'Class' => 'break-13 break-26'
-		),
-
-		'F5' => array(
-			'PriceGroup' => 'B',
-			'Width' => 36,
-			'Rows' => 5,
-			'StartRow' => 's',
-			'StartSeat' => 12,
-			'Class' => 'break-13 break-26'
-
-		),
-
-		'T3' => array(
-			'PriceGroup' => 'B',
-			'Width' => 23,
-			'Rows' => 5,
-			'StartRow' => 'y',
- 			'StartSeat' => '11',
-
-		),
-		'T4' => array(
-			'PriceGroup' => 'B',
-			'Width' => 19,
-			'Rows' => 5,
-			'StartRow' => 'y',
- 			'StartSeat' => '34',
-
-		),
+		
 
 
-		'T5' => array(
-			'PriceGroup' => 'A',
-			'Width' => 6,
-			'Rows' => 9,
-			'StartRow' => 'n',
- 			'StartSeat' => '48',
-			'Class' => 'no-right-margin rotate-10-cw'
-
-		),
-		'T6' => array(
-			'PriceGroup' => 'B',
-			'Width' => 3,
-			'Rows' => 9,
-			'StartRow' => 'n',
- 			'StartSeat' => '54',
- 			'Structure' => array(
-				5, 3, 3, 3, 3, 3, 3, 3, 3
-			),
-			'Class' => 'no-left-margin rotate-10-cw text-right'
-		)
+		
 	);
 
 	function renderSeats(){
@@ -154,5 +182,55 @@ class Tickets_Controller extends Page_Controller {
 			$html .= '</div>';
 		}
 		return $html;
+	}
+
+	
+}
+
+class Perfomance extends DataObject {
+	static $default_sort = 'Date';
+
+	static $db = array(
+		'Title' => 'Varchar',
+		'Date' => 'Date',
+		'Time' => 'Time',
+		'AdultA' => 'Currency',
+		'AdultB' => 'Currency',
+		'ChildA' => 'Currency',
+		'ChildB' => 'Currency',
+	);
+
+	static $has_one = array(
+		'Production' => 'Tickets'
+	);
+}
+
+class Section extends DataObject {
+	static $db = array(
+		'Title' => 'Varchar',
+		'Type' => 'ENum("Floor,Tier")',
+		'PriceGroup' => 'ENum("A,B")',
+		'Rows' => 'Int',
+		'Seats' => 'Int',
+		'StartRow' => 'Varchar(2)',
+		'StartSeat' => 'Int',
+		'FormatClasses' => 'Text',
+		'Structure' => 'Text'
+	);
+
+	static $has_one = array(
+		'Production' => 'Tickets'
+	);
+
+	function totalseats() {
+		if($this->Structure){
+			$total = 0;
+			foreach($this->Structure as $seats) {
+				$total += $seats;
+			}
+		} else {
+			$total = $this->Rows * $this->Seats;
+		}
+		return $total;
 	}
 }

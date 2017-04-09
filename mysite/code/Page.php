@@ -33,6 +33,7 @@ class Page_Controller extends ContentController {
 		requirements::javascript('https://code.jquery.com/jquery-3.2.1.min.js');
 		requirements::javascript('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js');
 		requirements::themedJavascript('scripts');
+		requirements::css('http://junction6travel.dev/twitter-bootstrap/thirdparty/bootstrap/css/bootstrap.css');
 
 		// You can include any CSS or JS required by your project here.
 		// See: http://doc.silverstripe.org/framework/en/reference/requirements

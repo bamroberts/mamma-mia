@@ -8,9 +8,14 @@ and open the template in the editor.
     Author     : o0BAMBAM0o
 */
 
+ul  {
+	-webkit-padding-start: 0px;
+}
+
 body {
 	background: #dfd6c8 url(../images/beach-full-size.jpg) no-repeat center 30%;
 	overflow-x:hidden;
+	max-width:100%;
 
 }
 
@@ -18,7 +23,7 @@ body {
 	width:80%;
 	max-width: 1800px;
 	background:white url(../images/marble.jpg);
-	padding:20px;
+	padding:2vw;
 	margin: 20px auto;
 	box-shadow: 2px 2px 20px 2px rgba(0,0,0,0.3);
 	position:relative;
@@ -55,6 +60,59 @@ header h1 div {
 
 * {
 	box-sizing: border-box;
+}
+
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: -60px;
+	background: rgb(80, 178, 234);
+    background: rgba(80, 178, 234, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    border-radius: 50px;
+    transform: rotate(45deg);
+	opacity:0;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+	z-index:10000;
+	border:1px solid white;
+	border-color: rgba(255, 255, 255, 0.5);		
+}
+#return-to-top:after {
+	content: "top";
+	position:absolute;
+	top:8px;
+	left:8px;
+	transform: rotate(-45deg);
+	font-size:20px;
+	font-weight:bold;
+	color:white;
+	 -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover:after {
+	top:4px;
+	left:4px;
+}
+
+
+#return-to-top.show {
+	right: 20px;
+	opacity:1;
+}
+
+#return-to-top:hover {
+	border-radius: 0px 50px 50px 50px;
+	background: rgba(80, 178, 234, 0.9);
 }
 
 .ribbon {
@@ -173,6 +231,19 @@ header h1 div {
 .bk.r > div {
 	right: -30px;
 }
+
+.sub-menu {
+	
+}
+
+.sub-menu li {
+	
+}
+
+.sub-menu li a {
+	
+}
+
 
 .arrow {
 	height: 25px !important;
@@ -340,13 +411,102 @@ h1 small {
     left: 0;
     text-align: center;
 }
-.actions p, .module p {
+.actions p {
 	background-color: rgba(255,255,255, 0.75);
     padding: 10px;
 	margin:0;
     border-radius: 2px;
     border: 1px solid rgba(0,0,0,0.1);
 }
+
+.thumbnail {
+	position: relative;
+}
+
+.thumbnail img {
+	opacity:1;
+	-webkit-transition: opacity 0.3s linear;
+    -moz-transition: opacity 0.3s ease;
+    -ms-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+
+.thumbnail:hover img {
+	opacity:0.5;
+}
+.thumbnail .caption {
+	position: absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	padding:4px;
+	color:white;
+	-webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.thumbnail:hover .caption {
+	top:0;
+}
+.thumbnail .caption .inner {
+	padding:6px;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0, 0, 0.5);
+	border-top:1px solid rgba(255, 255,255,0.3);
+	overflow: hidden;
+}
+
+.thumbnail .caption h3 {
+	margin:0;
+}
+
+.thumbnail h3 small {
+	color:#50B2EA;
+	font-weight:bold;
+	text-transform: uppercase;
+	display: block;
+	font-size:50%;
+	margin:3px 0;
+}
+
+.thumbnail:hover h3 small {
+	    border-bottom: 1px solid white;
+}
+
+.thumbnail .caption p {
+	margin:0;
+}
+
+.thumbnail .caption .bio {
+	font-size:75%;
+	display:none;	
+}
+.thumbnail:hover .caption .bio {
+	display:block;	
+}
+
+.thumbnail .caption .bio strong {
+	color:#50B2EA;
+}
+
+.thumbnail img.missing {
+    min-width:100%	
+}
+.thumbnail img.missing + .caption::before {
+	position: absolute;
+    content: ":(";
+    font-size: 10vw;
+    transform: rotate(90deg);
+    width: 100%;
+    top: -7vw;
+    color: #eee;
+    margin-left: 10px;
+}
+
 #wrapper {
 	position:relative;
 	z-index:50;
@@ -372,43 +532,43 @@ h1 small {
 	-ms-filter: "FlipH";
 	left:inherit;
 	right:0;
-}	
-
-.ticket-seat {
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    border: 1px solid #transparent;
-    margin: 1px;
-    border-radius: 3px 3px 0 0;
-    cursor: pointer;
-    
 }
 
-span.ticket-seat:before {
-    content: " ";
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    height: 4px;
-    width: 4px;
-    background: black;
-    border-radius: 4px;
+.tickets {
+	border:1px solid black;
+	padding:8px;
+}
+
+.ticket-seat {
+    width: 3px;
+    height: 3px;
+    display: inline-block;
+    border: 1px solid transparent;
+    cursor: pointer;   
+	margin:1px 1px 0 0;
+}
+
+.ticket-price-group-A .ticket-seat {
+	background:cyan;
+}
+
+.ticket-price-group-B .ticket-seat {
+	background:firebrick;
 }
 
 .ticket-section {
-	padding: 6px;
+	padding: 0.5vw;
     display: inline-block;
-    margin: 6px;
-    border: 1px solid transparent;
+    margin: 0.5vw;
+    border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 .ticket-section.ticket-price-group-B {
-	background-color:lightyellow;
+	bbackground-color:firebrick;
 }
 .ticket-section.ticket-price-group-A {
-	background-color:lightblue;
+	bbackground-color:cyan;
 }
 
 .ticket-section:hover {
@@ -423,19 +583,30 @@ span.ticket-seat:before {
 
 }
 
-
-
 .ticket-section.no-left-margin {
 	margin-left:0;
-	padding-left:0;
 	transform-origin:left;
 	border-radius:0 5px 5px 0;
+	border-left-width: 0;
+
 }
 .ticket-section.no-right-margin {
 	margin-right:0;
-	padding-right:0;
+	padding-right:1px;
 	transform-origin:right;	
 	border-radius:5px 0 0 5px;
+}
+
+.ticket-section.no-bottom-margin {
+	margin-bottom:0;
+	border-radius:5px 5px 0 0;
+	border-bottom-width: 0;
+}
+
+.ticket-section.no-top-margin {
+	margin-top:0;
+	padding-top:1px;
+	border-radius:0 0 5px 5px;
 }
 
 .ticket-section.rotate-10-ccw {
@@ -448,15 +619,25 @@ span.ticket-seat:before {
 
 .ticket-section.break-13 .ticket-seat:nth-of-type(13),
 .ticket-section.break-26 .ticket-seat:nth-of-type(23) {
-	margin-right:20px;;
+	margin-right:1vw;
 }
 
 .tickets .tickets-stage {
-	border-top: 12px solid #ccc;
-    width: 80%;
+	height: 50px;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px 0;
+	margin-bottom:10px;
+	position:relative;
+}
+
+.tickets .tickets-stage:before {
+	content: ' ';
+    display: block;
+    border-top: 1vw solid #ccc;
+    width: 100%;
     height: 500px;
-    border-radius: 30%;
-    position: relative;
+    border-radius: 25%;
     color: #666;
 }
 
@@ -465,8 +646,52 @@ span.ticket-seat:before {
     text-align: center;
     width: 100%;
     position: absolute;
-    font-size: 100;
+    font-size: 200%;
     text-transform: uppercase;
+	top:15px;
+	color:#ccc;
+}
+
+.ticket-section {
+	float:left;
+	position:relative;
+}
+
+.ticket-section-T1, ticket-section-F1 {
+	clear:both;
+}
+
+.ticket-section-T3 {
+	margin-left:14%;
+}
+
+.ticket-section-T1, 
+.ticket-section-T2 {
+	margin-top:16px; 
+}
+
+.ticket-section-T5, 
+.ticket-section-T6 {
+	top:-14px;
+}
+
+.ticket-section-F4,
+.ticket-section-F5 { 
+	margin-left:5px;
+}
+
+.ticket-section-T5 {
+	margin-left:5px;
+}
+
+.ticket-section-F1 {
+	margin-left:16px;
+}
+
+.ticket-section-F1,
+.ticket-section-F2,
+.ticket-section-F3 {
+	top:-10px;
 }
 
 @media all and (max-width: 1020px) {
