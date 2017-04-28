@@ -140,7 +140,7 @@ class Image extends File implements Flushable {
 	 *
 	 * @return string
 	 */
-	public function getTag() {
+	public function getTag($class = null) {
 		if($this->exists()) {
 			$url = $this->getURL();
 			$title = ($this->Title) ? $this->Title : $this->Filename;
@@ -151,7 +151,8 @@ class Image extends File implements Flushable {
 					$title = Convert::raw2att($matches[1]);
 				}
 			}
-			return "<img src=\"$url\" alt=\"$title\" />";
+			$classAtt = $class ? "class= \"$class\"" : '';
+			return "<img src=\"$url\" alt=\"$title\" $classAtt />";
 		}
 	}
 

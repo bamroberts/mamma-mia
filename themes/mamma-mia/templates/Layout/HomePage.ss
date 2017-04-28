@@ -1,4 +1,4 @@
-<div class="module row">
+<div class="module row spaced">
 	<div class="col-md-8">
 		<div class="row">
 			<div class="col-md-12">
@@ -9,29 +9,33 @@
 		</div>
 	</div>
 	<div class="col-md-4">
+		<% loop $Sections %>
 		<div class="actions">
-			<h2>Audition</h2>
-			<p>
-				Auditions 7th-9th July 2017<br />
-				<a href="#">Register now for an audition pack!</a>	
-			</p>						
-		</div>
-		<div class="actions">
-			<h2>Crew &amp; Volenteers</h2>
-			<p>	There are many aspects of this show we'd love to have you, we are looking for people to join every team from 
-				Hair &amp; Makeup, Front of House, Backstage and Lighting.  We are looking for both people with experiance and those with none that would like to gain some. 
-
-				<a href="#">
-					Get in touch now!
-				</a>	
-			</p>						
-		</div>
-		<div class="actions">
-			<h2>Tickets</h2>
-			<p>
-				Tickets go on general sale 12th Aug 2017<br />
-				<a href="#">Register you interest</a>	
-			</p>						
-		</div>
+			<h2>$Title</h2>
+			$Body
+		</div>	
+		<% end_loop %>
 	</div>
-</div>	
+</div>
+<div class="row">
+	<div class="col-md-4 module spaced">
+		<h3 class="module-title">
+			<i class="fa fa-facebook fa-fw"> </i> Facebook
+		</h3>
+		<div class="fb-page" data-href="https://www.facebook.com/showbizqt/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/showbizqt/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/showbizqt/">Showbiz Queenstown</a></blockquote></div>
+	</div>
+	<div class="col-md-4 module spaced">
+		<h3 class="module-title">
+			<i class="fa fa-twitter fa-fw"> </i> Twitter
+		</h3>
+		<a class="twitter-timeline" href="https://twitter.com/ShowbizQT" data-width="340" data-height="500">Tweets by ShobizQT</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+	</div>
+	<div class="col-md-4 module spaced">
+		<h3 class="module-title">
+			Righty
+		</h3>
+		<p class="module-inner">
+			Stuff!!!
+		</p>
+	</div>
+</div>

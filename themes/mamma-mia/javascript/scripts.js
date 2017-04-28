@@ -18,9 +18,7 @@ var cumulativeOffset = function(element) {
 			var menumain = document.getElementsByClassName('ribbon-main')[0];
 			var menutop = cumulativeOffset(menu)['top'];
 			
-			window.onresize = function(event) {
-				menutop = cumulativeOffset(menu)['top'];
-			};
+			
 			
 			var start = 0;
 			window.addEventListener('scroll', function() {
@@ -70,3 +68,29 @@ var cumulativeOffset = function(element) {
 			jQuery('#return-to-top').on('click', function() {
 				scrollTo(document.body, 0, 600);
 			});
+			
+			
+			// Create a new style tag
+			var style = document.createElement("style");
+
+			// Append the style tag to head
+			document.head.appendChild(style);
+
+			// Grab the stylesheet object
+			var sheet = style.sheet;
+
+			function addMenuWidth() {
+				$li = jQuery('.sub-menu li').first();
+				if($li) {
+					width = $li.width();
+					extra = width - 170;
+					deg = 16 - extra/14;
+					sheet.addRule('.sub-menu li:before','transform: skewY(-' + deg + 'deg); ');
+				}
+			}
+			addMenuWidth();
+
+			window.onresize = function(event) {
+				menutop = cumulativeOffset(menu)['top'];
+				addMenuWidth();
+			};

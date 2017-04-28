@@ -192,6 +192,7 @@ class ArrayList extends ViewableData implements SS_List, SS_Filterable, SS_Sorta
 	 */
 	public function merge($with) {
 		foreach ($with as $item) $this->push($item);
+		return $this;
 	}
 
 	/**

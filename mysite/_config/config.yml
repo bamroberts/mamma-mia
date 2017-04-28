@@ -9,3 +9,10 @@ After:
 # Caution: Indentation through two spaces, not tabs
 SSViewer:
   theme: 'simple'
+Director:
+  environment_type: 'dev'
+Date:
+  nice_format: 'l jS F Y'
+Time: 
+  nice_format: 'g:iA'  
+  

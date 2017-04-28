@@ -1,6 +1,6 @@
 
 <header class="row">
-	<div class="headline col-md-6">
+	<div class="headline col-md-6 left">
 		<div class="headline-logo">
 			<span>MAMMA MIA!</span>
 		</div>	
@@ -23,7 +23,13 @@
 			<span class="headline-mid-credit">CATHERINE JOHNSON</span>					
 		</div>
 	</div>
-	<div class="col-md-6">
-		<h1><span>QUEENSTOWN</span><div><small id="location" class="text-muted">7th - 12th Nov 2017<br /><small class="text-muted">Queenstown Event Centre</small></small><a href="#" class="btn btn-danger btn-sm">Book Now</a></div></h1>
+	<div class="col-md-6 right">
+		<h1>QUEENSTOWN<span><small id="location" class="text-muted">7th - 11th Nov 2017<br /><small class="text-muted">Queenstown Event Centre</small></small><a href="#" class="btn btn-danger btn-sm">Book Now</a></span></h1>
+		<div class="row text-center">
+			<p class="h4">BROUGHT TO YOU BY</p>
+			<div class="col-xs-5"><img class="img-responsive showbiz" src="/showbiz-large.png" /></div>
+			<div class="col-xs-2"><span class="h1 amp">&amp;</span></div>
+			<div class="col-xs-5"><img class="img-responsive" src="/Remarkables-Park-Large.png" /></div>
+		</div>
 	</div>
 </header>

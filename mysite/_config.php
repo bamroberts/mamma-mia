@@ -16,5 +16,7 @@ $databaseConfig = array(
 // Set the site locale
 i18n::set_locale('en_US');
 
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
 Director::isDev(1);
 

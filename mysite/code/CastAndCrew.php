@@ -44,11 +44,39 @@ class CastAndCrew extends Page {
 
         return $fields;
     }
+
+	function SubMenu() {
+		return new arrayList(array(
+			new ArrayData(array('Title'=>'Cast','HREF'=>"{$this->Link()}#cast",'Class'=>'Active')),
+			new ArrayData(array('Title'=>'Crew','HREF'=>"{$this->Link()}#crew")),
+			new ArrayData(array('Title'=>'Committee','HREF'=>"{$this->Link()}#committee"))
+			)
+		);
+
+	}
 }
 
 class CastAndCrew_Controller extends Page_Controller {
-       
 
+	private static $allowed_actions = array(
+        'findByUrl'
+    );
+
+    private static $url_handlers = array(
+		'' => 'index',
+        '$Department/$Name' => 'findByUrl',
+
+    );
+
+	public function findByUrl($request) {
+		$department = $request->latestParam('Department');
+		$name = $request->latestParam('Name');
+		if($department && $name && $member = DataObject::Get_one($department.'Member',"REPLACE(CONCAT(Name,'-',Title),' ','') = '$name'")) {
+			$content = $member->renderWith('bio');
+			return Director::is_ajax() ? $content : $this->customise(array('Content'=> $content))->render();
+		}
+		return $this->httpError(404);
+	}
 }
 
 class CastAndCrewMember extends DataObject {
@@ -56,13 +84,19 @@ class CastAndCrewMember extends DataObject {
 		'Name' => 'Varchar(100)',
 		'Title' => 'Varchar(100)',
 		'Bio' => 'HTMLText',
-		//'Department' => Enum
+		'TopBilled' => 'boolean'
 	);
 
 	static $has_one = array(
 		'Photo' => 'Image',
 		'Page' => 'CastAndCrew'
 	);
+
+	public function Link() {
+		$department = str_replace('Member', '', $this->ClassName);
+		return $this->Page()->Link().str_replace(' ', '', strtolower("$department/$this->Name-$this->Title"));
+	}
+
 }
 
 class CastMember extends CastAndCrewMember {}

@@ -14,17 +14,59 @@
 		<div id="curtain-left" class="curtain"></div>
 		<div id="curatin-right" class="curtain curtain-right"></div>
 		<div id="wrapper">
-			<div class="main-block">
+			<div class="squeeze pad">
 				<% include Header %>	
 			</div>
 			
-			<% include Navigation %>	
-			
-			<div class="main-block">
-				$Layout 
-				$Form
+			<% include Navigation %>
+			<% if $Title = Home %>
+				<div class="squeeze alert btn-danger">
+					<h4>Tickets on sale July 31st. Sign up for our pre-release mailer to guarantee the best seats!</h4>
+				</div>
+			<% end_if %>
+			<div class="squeeze main-block">
+				<% if $Title != Home %>
+					<div class="module heading"><h2>$Title</h2></div> 
+				<% end_if %>
+				<div class="pad">
+					<% if SubMenu %>
+					<div class="row">
+						<div class="col-md-3">
+							<% include SubMenu %>
+						</div>
+						<div class="col-md-9 content">
+							$Layout
+						</div>
+					</div>	
+					<% else %>
+						$Layout
+					<% end_if %>
+				</div>
+				<footer class="module footer">
+					<div class="row">
+						<div class="col-md-4"><b><a href="http://www.showbizqt.co.nz">&copy;Showbiz Queenstown 2017</a></b></div>
+						<div class="col-md-4">Blah</div>
+						<div class="col-md-4">Web design by <a href="http://www.bamroberts.com">BAMRoberts</a></div>
+					</div>	
+				</footer>
 			</div>
 		</div>
 		<a class="return-to-top" href="javascript:" id="return-to-top"></a>
-    </body>
+		<div id="modal" class="modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+			    <div class="modal-content">
+
+			    </div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9&appId=187899894592528";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+	</body>
+	
 </html>
