@@ -48,7 +48,7 @@ class Contact_controller extends Page_Controller {
 				'Backstage' => 'Backstage',
 				'Lighting' => 'Lighting',
 				'Bar' => 'Bar',
-				'Front of House' => 'Front of House',
+				'FoH' => 'Front of House',
 			))
 		);
 
@@ -102,14 +102,26 @@ class Contact_controller extends Page_Controller {
 
 }
 
-class MailingList extends Member {
+class MailingList extends DataObject {
 	static $db = array(
-		'Phone' => 'Varchar',
+		'FirtName' => 'Varchar(50)',
+		'Surname' => 'Varchar(50)',
+		'Email' => 'Varchar(255)',
+		'Phone' => 'Varchar(10)',
 	);
 }
 
 class Crew extends MailingList {
-	
+	static $db = array(
+		'Hair' => 'Boolean',
+		'Makeup' => 'Boolean',
+		'Wardrobe' => 'Boolean',
+		'Sound' => 'Boolean',
+		'Backstage' => 'Boolean',
+		'Lighting' => 'Boolean',
+		'Bar' => 'Boolean',
+		'FoH' => 'Boolean',
+	);
 }
 
 class Audition extends MailingList {
