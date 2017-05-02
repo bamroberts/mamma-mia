@@ -24,7 +24,7 @@
 		</div>
 	</div>
 	<div class="col-md-6 right">
-		<h1>QUEENSTOWN<span><small id="location" class="text-muted">7th - 11th Nov 2017<br /><small class="text-muted">Queenstown Event Centre</small></small><a href="#" class="btn btn-danger btn-sm">Book Now</a></span></h1>
+		<h1>QUEENSTOWN<span><small id="location" class="text-muted">8th - 11th Nov 2017<br /><small class="text-muted">Queenstown Event Centre</small></small><% with $SiteConfig %><% if TicketsForSale %><a href="$TicketsURL" class="btn btn-danger btn-sm" target="_blank">Book Now</a><% end_if %><% end_with %></span></h1>
 		<div class="row text-center">
 			<p class="h4">BROUGHT TO YOU BY</p>
 			<div class="col-xs-5"><img class="img-responsive showbiz" src="/showbiz-large.png" /></div>

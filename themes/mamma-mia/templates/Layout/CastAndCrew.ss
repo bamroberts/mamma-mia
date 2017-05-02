@@ -2,7 +2,7 @@
 	$Content
 <% else %>
 <div class="module cast-and-crew">
-	<h2>Cast<a name="cast"></a></h2>
+	<h2 id="cast">Cast</h2>
 	<% if $Cast %>
 		<div class="row cast">
 		<% loop $Cast %>
@@ -17,7 +17,7 @@
 	</div>	
 	<% end_if %>
 
-	<h2>Crew<a name="crew"></a></h2>
+	<h2 id="crew">Crew</h2>
 	<% if $Crew %>
 		<div class="row creative">
 		<% loop $Creative %>
@@ -35,7 +35,7 @@
 		</div>
 	<% end_if %>
 
-	<h2>Committee<a name="committee"></a></h2>
+	<h2 id="committee">Committee</h2>
 	<% if $Committee %>
 		<div class="row committee">
 		<% loop $Committee %>

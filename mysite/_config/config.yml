@@ -15,4 +15,7 @@ Date:
   nice_format: 'l jS F Y'
 Time: 
   nice_format: 'g:iA'  
+SiteConfig:
+  extensions:
+    - SiteSettings
   

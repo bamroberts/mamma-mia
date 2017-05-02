@@ -44,7 +44,7 @@
 	<% if Bronze %>
 	<div class="row bronze">
 		<% loop Bronze %>
-		<div class="col-md-1 col-sm-3 col-xs-3">
+		<div class="col-md-1 col-sm-2 col-xs-3">
 			<% include Thumbnail %>
 		</div>
 		<% end_loop %>

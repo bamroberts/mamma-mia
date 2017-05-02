@@ -47,7 +47,7 @@ class CastAndCrew extends Page {
 
 	function SubMenu() {
 		return new arrayList(array(
-			new ArrayData(array('Title'=>'Cast','HREF'=>"{$this->Link()}#cast",'Class'=>'Active')),
+			new ArrayData(array('Title'=>'Cast','HREF'=>"{$this->Link()}#cast",'Class'=>'active')),
 			new ArrayData(array('Title'=>'Crew','HREF'=>"{$this->Link()}#crew")),
 			new ArrayData(array('Title'=>'Committee','HREF'=>"{$this->Link()}#committee"))
 			)

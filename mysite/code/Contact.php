@@ -11,7 +11,7 @@ class Contact extends Page {
 
 class Contact_controller extends Page_Controller {
 
-	private static $allowed_actions = array('tickets','volunteer','audition','TicketsForm');
+	private static $allowed_actions = array('tickets','volunteer','audition','TicketsForm','CrewForm','AuditionForm');
 
 	public function Tickets() {
 		return $this->render(array(
@@ -55,9 +55,22 @@ class Contact_controller extends Page_Controller {
 		$actions = FieldList::create(
 			FormAction::create('doCrewRequest', 'Send')->setStyle("primary")
 		);
+		$this->action = 'crew';
 
 		return BootstrapForm::create($this, 'CrewForm', $fields, $actions)->setLayout("horizontal");
 	}
+	
+	public function doCrewRequest($data, $form, $request) {
+		if(!$entry = Crew::get()->filter(array('Email'=> $data['Email']))->first()){
+			$entry = new Crew();
+		}
+		$entry->update($data);
+		$entry->write();
+
+		return $this->customise(array('Content'=>'<div class="alert alert-success">Thanks. You are on the list! We will be in touch shortly. Thanks for your support!</div>'))->render();
+	}
+
+
 
 	public function TicketsForm() {
 		$fields = $this->baseForm();
@@ -65,8 +78,18 @@ class Contact_controller extends Page_Controller {
 		$actions = FieldList::create(
 			FormAction::create('doTicketsRequest', 'Sign Me Up!')->setStyle("danger")->setSize("action")
 		);
-
+		$this->action = 'tickets';
 		return BootstrapForm::create($this, 'TicketsForm', $fields, $actions)->setLayout("horizontal");
+	}
+
+	public function doTicketsRequest($data, $form, $request) {
+		if(!$entry = MailingList::get()->filter(array('ClassName'=>'MailingList', 'Email'=> $data['Email']))->first()){
+			$entry = new MailingList();
+		}
+		$entry->update($data);
+		$entry->write();
+
+		return $this->customise(array('Content'=>'<div class="alert alert-success">Thanks. You are on the list! We will be in touch shortly when tickets go on sale!</div>'))->render();
 	}
 
 	public function AuditionForm() {
@@ -74,21 +97,20 @@ class Contact_controller extends Page_Controller {
 		$actions = FieldList::create(
 			FormAction::create('doAuditionRequest', 'Get your audition pack!')->setStyle("danger")->setSize("action")
 		);
-
+		$this->action = 'audition';
 		return BootstrapForm::create($this, 'AuditionForm', $fields, $actions)->addExtraClass('module')->setLayout("horizontal");
 	}
 
-	public function doTicketsRequest($data, $form, $request) {
-		if(!$entry = MailingList::get()->filter(array('Email'=> $data['Email']))->first()){
-			$entry = new MailingList();
+	public function doAuditionRequest($data, $form, $request) {
+		if(!$entry = Audition::get()->filter(array('Email'=> $data['Email']))->first()){
+			$entry = new Audition();
 		}
 		$entry->update($data);
 		$entry->write();
-		$form->sessionMessage('Thanks. You are on the list! We will be in touch shortly when tickets go on sale','success');
-		//Director::redirectBack();
-		$this->redirectBack();
-		echo 'thanks';
+		return $this->customise(array('Content'=>'<div class="alert alert-success">Thanks. You are on the list! We will be sending out Audition Packs and registration info 6 weeks before auditions. Good Luck!</div>'))->render();
 	}
+
+	
 
 	function SubMenu() {
 		return new arrayList(array(
@@ -104,7 +126,7 @@ class Contact_controller extends Page_Controller {
 
 class MailingList extends DataObject {
 	static $db = array(
-		'FirtName' => 'Varchar(50)',
+		'FirstName' => 'Varchar(50)',
 		'Surname' => 'Varchar(50)',
 		'Email' => 'Varchar(255)',
 		'Phone' => 'Varchar(10)',
