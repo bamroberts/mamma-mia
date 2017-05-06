@@ -17,8 +17,11 @@
 			<div class="squeeze pad">
 				<% include Header %>	
 			</div>
-			
-			<% include Navigation %>
+			<% if CurrentMember %>
+				<% include Navigation %>
+			<% else %>
+				<div class="squeeze alert btn-danger">The Mamma Mia Queenstown Microsite isn't quite ready yet. If you are seeing this page though it means its only days away. Check back soon!!!</div>
+			<% end_if %>
 			<% if $Title = Home %>
 				<div class="squeeze alert btn-danger">
 					<h4>Tickets on sale July 31st. Sign up for our pre-release mailer to guarantee the best seats!</h4>
@@ -44,9 +47,9 @@
 				</div>
 				<footer class="module footer">
 					<div class="row">
-						<div class="col-md-4"><b><a href="http://www.showbizqt.co.nz">&copy;Showbiz Queenstown 2017</a></b></div>
-						<div class="col-md-4">Blah</div>
-						<div class="col-md-4">Web design by <a href="http://www.bamroberts.com">BAMRoberts</a></div>
+						<div class="col-md-4"><b><a href="http://www.showbizqt.co.nz" target="_blank">&copy;Showbiz Queenstown 2017</a></b></div>
+						<div class="col-md-4"></div>
+						<div class="col-md-4">Design&amp;Build by <a href="http://www.bamroberts.com" target="_blank">BAMRoberts</a></div>
 					</div>	
 				</footer>
 			</div>

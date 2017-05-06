@@ -20,3 +20,5 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 Director::isDev(1);
 
+Security::setDefaultAdmin('admin', 'rusYc0ll');
+
