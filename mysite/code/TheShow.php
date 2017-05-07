@@ -15,7 +15,7 @@ class TheShow extends Page {
 
 	static $db = array(
 		'Heading' => 'Text',
-		'TheShow' => 'HTMLText',
+		'ShowDetails' => 'HTMLText',
 		'Showbiz' =>'HTMLText'
 	);
 
@@ -27,7 +27,7 @@ class TheShow extends Page {
         // Get the fields from the parent implementation
         $fields = parent::getCMSFields();
 		$fields->insertAfter('Content', new TextAreaField("Heading"));
-		$fields->insertAfter('Heading', new HtmlEditorField("TheShow", "About the Show"));
+		$fields->insertAfter('Heading', new HtmlEditorField("ShowDetails", "About the Show"));
 		$fields->insertAfter('TheShow', new HtmlEditorField("Showbiz", "About Showbiz"));
 		
 		$config = GridFieldConfig_RelationEditor::create();

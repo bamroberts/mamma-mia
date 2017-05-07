@@ -390,13 +390,13 @@ header .right .row {
 }
 
 
-.ribbon li {
+.ribbon li, .ribbon .greedy-trigger {
 	list-style:none;
 	float:left;
 	margin:6px 4px;
 
 }
-.ribbon ul a, .ribbon ul label {
+.ribbon a, .ribbon label{
 	display:block;
 	text-decoration:none;
 	color:inherit;
@@ -426,7 +426,7 @@ header .right .row {
 .ribbon ul {margin:0 16px;}
 
 .ribbon li a:hover,
-.ribbon li label:hover {  
+.ribbon  label:hover {  
 	background:#178acc;
 	border-color: rgba(255,255,255,0.5);
 }
@@ -436,13 +436,80 @@ header .right .row {
 }
 
 .ribbon li.active a, 
-.ribbon li.active label {  
+.ribbon li.active label,
+.ribbon .open label {  
 	background:#178acc;
 	border-color: rgba(255,255,255,0.8);
 }
 
-.ribbon li.menu {
+.ribbon span.active label {
+	border-color: rgba(255,255,255,0.8);
+}
+
+.ribbon .menu {
 	display:none;
+}
+
+nav.greedy .links.fade {
+	opacity:0.5
+}
+
+nav.greedy .greedy-trigger {position: relative;}
+nav.greedy .greedy-trigger label {
+	max-width: 26px; 
+    overflow: hidden;
+    max-height: 26px;
+    white-space: nowrap;
+}
+nav.greedy .greedy-trigger::after {
+  position: absolute;
+  top: -4px;
+  right:-6px;
+  content: attr(count);
+  display: inline-flex;
+  width: 17px;
+  height: 17px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(23, 138, 204, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #f2f2f2;
+  border-radius: 50%;
+  font-size: 11px;
+  line-height: 11px;
+}
+
+
+nav.greedy ul.hidden-links.hidden {
+	max-height:0px;
+}
+
+nav.greedy ul.hidden-links {
+	background-color: #50B2EA;
+	margin: 0;
+	overflow:hidden;
+	-webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+	width:100%;
+	max-height:1000px;
+	opacity:1;
+    margin-top: 43px;
+    padding: 10px;
+    z-index: 0;
+    box-shadow: 0px 4px 9px -2px;
+}
+nav.greedy ul.hidden-links.hidden {
+  max-height:0;
+  opacity:0;
+
+}
+nav.greedy ul.hidden-links li.menu-item {
+  display: block !important;
+  margin-bottom:8px;
+  float:none;
 }
 
 
@@ -589,7 +656,7 @@ header > div:first-of-type, nope.module.row > div {
 }
 
 
-h2, .module-title, .ribbon li, h1 {
+h2, .module-title, .ribbon, h1 {
 	text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
@@ -883,7 +950,7 @@ article h4::first-letter, article p::first-letter {
 }
 .curtain {
 	position: absolute;
-    height: 100rem;
+    height: 200rem;
     width: 25%;
     background: url(../images/curtain.png) right -60px no-repeat;
     top: 0;
@@ -1189,7 +1256,18 @@ article h4::first-letter, article p::first-letter {
 	}
 }
 
-@media all and (max-width: 680px) {
+@media all and (max-width: 768px) {
+	
+	.by-line {
+		margin-bottom:-19px;
+	}
+	
+	.by-line .showbiz, .by-line .headline-sponsor {
+		position:absolute;
+		top:10px;
+		left:0;
+	}
+	
 	.skew.l {
 		left: 5%;
 		transform: skew(00deg,30deg);
@@ -1203,8 +1281,20 @@ article h4::first-letter, article p::first-letter {
 		width: 50%;
 	}
 	
-	.ribbon li.menu {
-		display:block;
+	nav.greedy .greedy-trigger label {
+		max-width: inherit;
+	}
+	
+	.ribbon .menu {
+		display:inline-block;
+	}
+	
+	nav.greedy .greedy-trigger::after {
+		content:none;
+	}
+	
+	.ribbon .links {
+		max-width:100px;
 	}
 	
 	.ribbon ul {
@@ -1212,9 +1302,7 @@ article h4::first-letter, article p::first-letter {
 		margin: 0;
 		padding: 10px;
 		padding:0 10px;
-		max-height:0px;
 		overflow:hidden;
-		transition:all 200ms linear, margin 0ms linear;
 
 	}
 	

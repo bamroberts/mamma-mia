@@ -9,3 +9,9 @@ _ss_environment.php
 
 # ignore composer vendor folder
 /vendor/
+/mysite/_config.php
+.DS_Store
+.htaccess.swp
+nbproject/*
+nbproject/
+/.DS_Store

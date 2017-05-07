@@ -1,0 +1,600 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Mamma Mia Queenstown | 7th - 12th Nov 2017 | Queenstown Events Centre </title>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link>
+		<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-zF4BRsG/fLiTGfR9QL82DrilZxrwgY/+du4p/c7J72zZj+FLYq4zY00RylP9ZjiT" crossorigin="anonymous"></link>
+			<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+				
+		<style>
+			body {
+				background: #dfd6c8 url(beach-full-size.jpg) no-repeat center 30%;
+				overflow-x:hidden;
+				
+			}
+			#wrapper {
+				
+			}
+			
+			.main-block {
+				width:80%;
+				max-width: 1800px;
+				background:white url(marble.jpg);
+				padding:20px;
+				margin: 20px auto;
+				box-shadow: 2px 2px 20px 2px rgba(0,0,0,0.3);
+				position:relative;
+				z-index:100;
+			}
+			
+			
+			h1 span {
+				margin-right:4px;
+			}
+			#location {
+				    font-size: 56%;
+					line-height: 16px;
+					padding-top: 8px;
+					display: inline-block;
+			}
+			
+			* {
+  box-sizing: border-box;
+}
+
+.ribbon {
+  width: 86.2%;
+  max-width: 1800px;
+  height: 80px;
+  margin: 0px auto; 
+  position: relative;
+  margin-bottom:-30px;
+}
+
+.one.fixed > div {
+	position: fixed;
+}
+
+.ribbon.fixed .ribbon-main {
+	width: 81%;
+    left: 54.5%;
+}
+
+.ribbon.fixed .bk {
+	width:6.85%;
+
+}
+
+.ribbon.fixed .bk.l {
+	left:6.9%;
+}
+
+.ribbon.fixed .bk.r {
+	right:6.9%;
+}
+
+.ribbon.fixed .skew {
+	top:4px;
+}
+
+.ribbon.fixed .skew.l {
+	left:10.8%
+}
+.ribbon.fixed .skew.r {
+	right:10.8%
+}
+
+.one > div {
+  height: 50px;
+}
+
+.ribbon-main {
+  background: #50B2EA; 
+  position: relative;
+  display: block;
+  width: 94%;
+  left: 48%;
+  top: 0;
+  padding: 5px;
+  margin-left: -45%;
+  z-index: 300;
+}
+
+.ribbon-main > div {
+  border: 1px dashed #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+  height: 40px;
+}
+
+.ribbon-main:after {
+	content:'';
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    width: 99.5%;
+    display: block;
+    box-shadow: 0px 2px 6px 1px; black;
+}
+
+
+
+.bk {
+ background: #29A1E6;
+ position: absolute;
+ width: 8%;
+ top: 12px;
+}
+
+.bk.l {
+ left: 0;
+}
+
+.bk.r {
+ right: 0;
+}
+
+.skew {
+  position: absolute;
+  background: #178ACC;
+  width: 3%;
+  top: 6px;
+  z-index: 5;
+}
+
+.skew.l {
+  left: 5%;
+  transform: skew(00deg,20deg);
+}
+
+.skew.r {
+  right: 5%;
+  transform: skew(00deg,-20deg);
+}
+
+.bk.l > div {
+  left: -30px;
+}
+
+.bk.r > div {
+  right: -30px;
+}
+
+.arrow {
+  height: 25px !important;
+  position: absolute;
+  z-index: 2;
+	width: 0; 
+	height: 0; 
+}
+
+.arrow.top {
+  top: 0px;
+  border-top: 0px solid transparent;
+	border-bottom: 25px solid transparent; 	
+	border-right: 30px solid #29A1E6; 
+}
+
+.arrow.bottom {
+  top: 25px;
+  border-top: 25px solid transparent;
+	border-bottom:0px solid transparent; 	
+	border-right: 30px solid #29A1E6; 
+}
+
+.r .bottom {
+  border-top: 25px solid transparent;
+	border-bottom: 0px solid transparent; 	
+	border-left: 30px solid #29A1E6; 
+  border-right: none;
+}
+
+.r .top {
+  border-bottom: 25px solid transparent;
+	border-top: 0px solid transparent; 	
+	border-left: 30px solid #29A1E6; 
+  border-right: none;
+}
+
+
+.ribbon li {
+  list-style:none;
+  float:left;
+  padding:2px 6px;
+  margin:6px 4px;
+  color:white;
+  font-weight:bold;
+  height:26px;
+  background-color:#219EE5;
+  border-radius:5px;
+  border:1px solid transparent;
+  
+}
+.ribbon ul a {
+	text-decoration:none;
+	color:inherit;
+}
+.ribbon ul {margin:0 16px;}
+
+.ribbon li:hover {  background:#178acc;
+		 border-color: rgba(255,255,255,0.5);
+}
+
+.ribbon li.btn-danger:hover {  
+	background:#B6191F;
+}
+
+.ribbon li.active {  background:#178acc;
+		 border-color: rgba(255,255,255,0.8);
+}
+
+		
+.headline {
+	text-align:center;
+	font-size:2em;
+	line-height: 1;
+}
+.headline-logo {
+	
+	background: url("/mammamia.png") center center no-repeat;
+	background-size: contain;
+	margin-bottom:10px;
+	text-shadow: none;
+    color: transparent;
+	    border: 0;
+
+}
+.headline-logo:after {
+	content:"\7F";	
+	font-size:300%;
+}
+.headline-logo span {
+    font: 0/0 a;
+}
+.headline-by, .headline-small-credit{
+	font-size:45%;
+}
+.headline-main-credit {
+	font-size:100%;
+}
+
+.headline-mid-credit {
+	font-size:70%;
+}
+
+.headline-mid-row {
+	line-height:70%
+}
+
+.module {
+	background-color: #178acc;
+    padding: 10px;
+    border: 15px solid transparent;
+    background-clip: padding-box;
+	border-radius: 17px;
+}
+
+.module .module-inner {
+	background-color:white;
+}
+
+.module h1, .module h2 {
+	color:white;
+}
+
+.module .module-title {
+	color:white;
+	margin-top:0;
+}
+
+header > div, nope.module.row > div {
+	border-left:2px solid rgba(255,255,255,0.2);
+	border-right:2px solid rgba(125,125,125,0.2)
+}
+
+.actions h2, .module-title, .ribbon li, h1 {
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+h1 small {
+	text-shadow:initial;
+	display:inline-block;
+}
+
+.actions {
+	border-top: 1px solid rgba(255,255,255,0.25);
+    padding: 5px;
+    margin-top: 30px;
+    position: relative;
+}
+.actions h2 {
+	position: relative;
+    top: -25px;
+    margin: 0 auto -20px;
+    width: 50%;
+    display: block;
+    background: #178acc;
+    left: 0;
+    text-align: center;
+}
+.actions p, .module p {
+	background-color: rgba(255,255,255, 0.75);
+    padding: 10px;
+	margin:0;
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+#wrapper {
+	position:relative;
+	z-index:50;
+}
+.curtain {
+	position: absolute;
+    height: 2000px;
+    width: 25%;
+    background: url(curtain.png) right -38% no-repeat;
+    top: 0;
+    z-index: 1;
+	transition: all 100ms linear;
+
+
+}
+.curtain-right {
+
+		-moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+		left:inherit;
+		right:0;
+}	
+
+
+
+
+@media all and (max-width: 1020px) {
+  .skew.l {
+    left: 5%;
+    transform: skew(00deg,25deg);
+  }
+
+  .skew.r {
+    right: 5%;
+    transform: skew(00deg,-25deg);
+  }
+  .curtain {
+	  width: 40%;
+  }
+}
+
+@media all and (max-width: 680px) {
+  .skew.l {
+    left: 5%;
+    transform: skew(00deg,30deg);
+  }
+
+  .skew.r {
+    right: 5%;
+    transform: skew(00deg,-30deg);
+  }
+   .curtain {
+	  width: 50%;
+  }
+}
+
+@media all and (max-width: 460px) {
+  .skew.l {
+    left: 5%;
+    transform: skew(00deg,40deg);
+  }
+  .skew.r {
+    right: 5%;
+    transform: skew(00deg,-40deg);
+  }
+}
+		</style>
+		
+    </head>
+    <body>
+		<div id="curtain-left" class="curtain"></div>
+		<div id="curatin-right" class="curtain curtain-right"></div>
+		<div id="wrapper">
+			<div class="main-block">
+			
+				<div class="top"></div>
+				<header class="row">
+
+					<div class="headline col-md-6">
+						<div class="headline-logo">
+							<span>MAMMA MIA!</span>
+						</div>	
+						<div class="headline-by">
+							MUSIC AND LYRICS BY 
+						</div>
+						<div class="headline-main-credit">
+							BENNY ANDERSSON 
+						</div>
+						<div class="headline-main-credit">
+							BJÖRN ULVAEUS 
+						</div>
+						<div class="headline-small-credit">
+							AND SOME SONGS WITH STIG ANDERSON <br /><br />
+						</div>
+						<div class="headline-mid-row">
+							<span class="headline-small-credit ">
+								BOOK BY
+							</span>
+							<span class="headline-mid-credit">CATHERINE JOHNSON</span>					
+						</div>
+					</div>
+					<div class="col-md-6">
+						<h1><span class="pull-left">QUEENSTOWN</span><small id="location" class="text-muted">7th - 12th Nov 2017<br /><small class="text-muted">Queenstown Event Centre</small></small><a href="#" class="btn btn-danger btn-sm">Book Now</a></h1>
+					</div>
+				</header>
+			</div>
+			
+			<!-- RIBBON 1 -->
+			<div class="ribbon one">
+
+			  <div class="bk l">
+				<div class="arrow top"></div> 
+				<div class="arrow bottom"></div>
+			  </div>
+
+			  <div class="skew l"></div>
+
+			  <div class="ribbon-main">
+				  <div>
+					  <ul class="">
+						  <li class="active"><a href="/">The Show<span class="sr-only">(current)</span></a></li>
+						  <li><a href="/show">Tickets</a></li>
+						  <li><a href="/cast-and-crew">Cast &amp; Crew</a></li>
+						  <li><a href="/tickets">Sponsors</a></li>
+						  <li><a href="/tickets">News</a></li>
+						  <li><a href="/tickets">Competitions</a></li>
+						  
+						  <li class="book pull-right btn-danger"><a href="/tickets" class="">BOOK NOW!</a></li>
+						</ul> 
+				  </div>   
+			  </div>
+
+			  <div class="skew r"></div>
+
+			  <div class="bk r">
+				<div class="arrow top"></div> 
+				<div class="arrow bottom"></div>
+			  </div>
+
+			</div>
+			<!--
+						<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					    <div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+						  </button>
+						  <a class="navbar-brand " href="/">HOME</a>
+						</div>
+
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+						  <li class="active"><a href="/">The Show<span class="sr-only">(current)</span></a></li>
+						  <li><a href="/show">Tickets</a></li>
+						  <li><a href="/cast-and-crew">Cast &amp; Crew</a></li>
+						  <li><a href="/tickets">Sponsors</a></li>
+						  <li><a href="/tickets">News</a></li>
+						  <li><a href="/tickets">Competitions</a></li>
+						  
+						</ul> 
+					</div>	
+				</div>
+			</nav>
+   -->
+			<div class="main-block">
+				<div class="module row">
+					<div class="col-md-8">
+						<div class="row">
+							<div class="col-md-12">
+								<a href="#" class="thumbnail">
+									<img src="showpic.jpg" alt="..." />
+								</a>
+						</div>
+					</div>
+					</div>
+					<div class="col-md-4">
+						<div class="actions">
+							<h2>Audition</h2>
+							<p>
+								Auditions 7th-9th July 2017<br />
+								<a href="#">Register now for an audition pack!</a>	
+							</p>						
+						</div>
+						<div class="actions">
+							<h2>Crew &amp; Volenteers</h2>
+							<p>	There are many aspects of this show we'd love to have you, we are looking for people to join every team from 
+								Hair &amp; Makeup, Front of House, Backstage and Lighting.  We are looking for both people with experiance and those with none that would like to gain some. 
+
+								<a href="#">
+									Get in touch now!
+								</a>	
+							</p>						
+						</div>
+						<div class="actions">
+							<h2>Tickets</h2>
+							<p>
+								Tickets go on general sale 12th Aug 2017<br />
+								<a href="#">Register you interest</a>	
+							</p>						
+						</div>
+					</div>	
+				</div>
+				<div class="row">
+					<div class="col-md-6 module">
+						<h3 class="module-title">
+							Social
+						</h3>
+						<p class="module-inner">
+							Stuff!!!
+						</p>
+					</div>
+
+					<div class="col-md-6 module">
+						<h3 class="module-title">
+							Righty
+						</h3>
+						<p class="module-inner">
+							Stuff!!!
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+    </body>
+	<script>
+		
+			var cumulativeOffset = function(element) {
+				var top = 0, left = 0;
+				do {
+					top += element.offsetTop  || 0;
+					left += element.offsetLeft || 0;
+					element = element.offsetParent;
+				} while(element);
+
+				return {
+					top: top,
+					left: left
+				};
+			};
+			
+			var left = document.getElementsByClassName('curtain')[0];
+			var right = document.getElementsByClassName('curtain')[1];
+			var menu = document.getElementsByClassName('ribbon')[0];
+			var menumain = document.getElementsByClassName('ribbon-main')[0];
+			var menutop = cumulativeOffset(menumain)['top'];
+			
+			var start = 0;
+			window.addEventListener('scroll', function() {
+				var scrollTop = (window.pageYOffset || window.scrollTop);
+				var scrollAmount = scrollTop/5
+				
+				left.style.left = (start + (scrollAmount*-1)) + 'px';
+				right.style.right = (start + (scrollAmount*-1)) + 'px';
+				if(scrollTop >= menutop ) {
+					if(!menu.classList.contains('fixed')) {
+						menu.classList.add("fixed");
+					}
+				} else if(menu.classList.contains('fixed')) {
+					menu.classList.remove("fixed");
+				}
+				
+				//var scrollPercent = scrollTop/scrollArea || 0;
+				
+			});
+	</script>
+</html>

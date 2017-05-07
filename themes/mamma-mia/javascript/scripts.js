@@ -94,3 +94,119 @@ var cumulativeOffset = function(element) {
 				menutop = cumulativeOffset(menu)['top'];
 				addMenuWidth();
 			};
+			
+/*
+GreedyNav.js - http://lukejacksonn.com/actuate
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+Copyright (c) 2015 Luke Jackson
+*/
+
+jQuery(document).ready(function($){
+
+  var $btn = $('nav.greedy .greedy-trigger');
+  var $vlinks = $('nav.greedy .links');
+  var $hlinks = $('nav.greedy .hidden-links');
+
+  var availableSpace, numOfVisibleItems, requiredSpace, timer, closingTime = 1000;
+
+	// Get initial state
+	// $vlinks.children().outerWidth(function(i, w) {
+	//   console.log(i);
+	//   console.log(w);
+	//   totalSpace += w;
+	//   numOfItems += 1;
+	//   breakWidths.push(totalSpace);
+	// });
+	// rewrite the above to work with jQuery 1.7
+
+	var numOfItems = 0;
+	var totalSpace = 0;
+	var breakWidths = [];
+	var is_initialised = false;
+
+
+	function buildWidths() {
+
+		if (is_initialised || !$vlinks.is(':visible')) {
+		 return;
+		}
+
+		$vlinks.children().each(function(){
+			totalSpace += $(this).outerWidth();
+			numOfItems += 1;
+			breakWidths.push(totalSpace);
+		});
+
+		is_initialised = true;
+   }
+
+  function check() {
+
+	  if (!is_initialised) {
+	    return;
+     }
+
+	 
+
+    // Get instant state
+    availableSpace = $vlinks.width() - ($btn.width() + 155);
+	console.log(availableSpace);
+    numOfVisibleItems = $vlinks.children().length;
+    requiredSpace = breakWidths[numOfVisibleItems - 1];
+
+    // There is not enough space
+    if (requiredSpace > availableSpace) {
+      $vlinks.children().last().prependTo($hlinks);
+      numOfVisibleItems -= 1;
+      check();
+      // There is more than enough space
+    } else if (availableSpace > breakWidths[numOfVisibleItems]) {
+      $hlinks.children().first().appendTo($vlinks);
+      numOfVisibleItems += 1;
+      check();
+    }
+    // Update the button accordingly
+    $btn.attr("count", numOfItems - numOfVisibleItems);
+    if (numOfVisibleItems === numOfItems) {
+		$btn.addClass('hidden');
+    } else {
+		$btn.removeClass('hidden');
+		if($hlinks.find('li.active').length) {
+			$btn.addClass('active');
+		} else {
+			$btn.removeClass('active');
+		}
+	}
+  }
+
+  // check();
+
+  // Window listeners
+  $(window).resize(function() {
+	 buildWidths();
+     check();
+  });
+
+  $btn.on('click', function() {
+	$vlinks.toggleClass('fade');
+	$btn.toggleClass('open');
+    $hlinks.toggleClass('hidden');
+    clearTimeout(timer);
+  });
+
+  $hlinks.on('mouseleave', function() {
+    // Mouse has left, start the timer
+    timer = setTimeout(function() {
+      $hlinks.addClass('hidden');
+	  $btn.toggleClass('open');
+	  $vlinks.toggleClass('fade');
+    }, closingTime);
+  }).on('mouseenter', function() {
+    // Mouse is back, cancel the timer
+    clearTimeout(timer);
+  })
+
+	buildWidths();
+	check();
+
+});

@@ -34,10 +34,10 @@
 				<div class="pad">
 					<% if SubMenu %>
 					<div class="row">
-						<div class="col-md-3">
+						<div class="col-sm-3">
 							<% include SubMenu %>
 						</div>
-						<div class="col-md-9 content">
+						<div class="col-sm-9 content">
 							$Layout
 						</div>
 					</div>	
@@ -71,6 +71,7 @@
 		  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9&appId=187899894592528";
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
+		
 	</body>
 	
 </html>

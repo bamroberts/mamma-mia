@@ -1,7 +1,7 @@
 <article>
 	<h4>$Heading</h4>
 	<div class="row">
-		<div class="col-sm-7">$TheShow</div>
+		<div class="col-sm-7">$ShowDetails</div>
 
 		<div class="col-sm-5 module">
 			<% loop Quotes %>
