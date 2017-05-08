@@ -52,7 +52,7 @@ class Contact_controller extends Page_Controller {
 		);
 
 		$actions = FieldList::create(
-			FormAction::create('doCrewRequest', 'Send')->setStyle("primary")
+			FormAction::create('doCrewRequest', 'Send')->addExtraClass("btn-danger")->addExtraClass("btn-action")
 		);
 		$this->action = 'volunteer';
 
@@ -75,7 +75,7 @@ class Contact_controller extends Page_Controller {
 		$fields = $this->baseForm();
 		$fields->unshift(new LiteralField('Info','<article><h4>Sign up now for the latest ticket anouncements</h4> <p>Make sure you get the best sets in the house.</p><article>'));
 		$actions = FieldList::create(
-			FormAction::create('doTicketsRequest', 'Sign Me Up!')->setStyle("danger")->setSize("action")
+			FormAction::create('doTicketsRequest', 'Sign Me Up!')->addExtraClass("btn-danger")->addExtraClass("btn-action")
 		);
 		$this->action = 'tickets';
 		return BootstrapForm::create($this, 'TicketsForm', $fields, $actions)->addExtraClass('module')->setLayout("horizontal");
@@ -94,7 +94,7 @@ class Contact_controller extends Page_Controller {
 	public function AuditionForm() {
 		$fields = $this->baseForm();
 		$actions = FieldList::create(
-			FormAction::create('doAuditionRequest', 'Get your audition pack!')->setStyle("danger")->setSize("action")
+			FormAction::create('doAuditionRequest', 'Get your audition pack!')->addExtraClass("btn-danger")->addExtraClass("btn-action")
 		);
 		$this->action = 'audition';
 		return BootstrapForm::create($this, 'AuditionForm', $fields, $actions)->addExtraClass('module')->setLayout("horizontal");

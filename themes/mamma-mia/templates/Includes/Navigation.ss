@@ -10,9 +10,11 @@
 
 	<div class="ribbon-main">
 		<div>
+			<% with $SiteConfig %>
 			<% if TicketsForSale %>
 				<ul class="buy"><li class="book pull-right"><a href="/tickets" class="btn-danger">BOOK NOW!</a></li></ul> 
 			<% end_if %>
+			<% end_with %>
 			<ul class="links">
 				<% loop $Menu(1) %>
 					<li class="menu-item <% if LinkOrSection = section %>active<% end_if %>">

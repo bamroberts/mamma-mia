@@ -1,27 +1,27 @@
 <div class="module row spaced">
 	<div class="col-md-8">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-xs-12">
 				<a href="#" class="thumbnail">
 					<img src="/assets/showpic.jpg" alt="..." />
 				</a>
 			</div>
-			<div class="col-md-3">
+			<div class="col-xs-3">
 				<a href="#" class="thumbnail">
 					<img src="/assets/showpic.jpg" alt="..." />
 				</a>
 			</div>
-			<div class="col-md-3">
+			<div class="col-xs-3">
 				<a href="#" class="thumbnail">
 					<img src="/assets/showpic.jpg" alt="..." />
 				</a>
 			</div>
-			<div class="col-md-3">
+			<div class="col-xs-3">
 				<a href="#" class="thumbnail">
 					<img src="/assets/showpic.jpg" alt="..." />
 				</a>
 			</div>
-			<div class="col-md-3">
+			<div class="col-xs-3">
 				<a href="#" class="thumbnail">
 					<img src="/assets/showpic.jpg" alt="..." />
 				</a>
