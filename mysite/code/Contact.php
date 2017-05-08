@@ -15,17 +15,16 @@ class Contact_controller extends Page_Controller {
 
 	public function Tickets() {
 		return $this->render(array(
-			'Content'=>$this->TicketsForm(),
-			'Title' => 'Wait List'
+			'Form'=>$this->TicketsForm(),
 		));
 	}
 
 	public function Audition() {
-		return $this->render(array('Content'=>$this->AuditionForm()));
+		return $this->render(array('Form'=>$this->AuditionForm()));
 	}
 
 	public function Volunteer() {
-		return $this->render(array('Content'=>$this->CrewForm()));
+		return $this->render(array('Form'=>$this->CrewForm()));
 	}
 
 	private function baseForm() {
@@ -55,9 +54,9 @@ class Contact_controller extends Page_Controller {
 		$actions = FieldList::create(
 			FormAction::create('doCrewRequest', 'Send')->setStyle("primary")
 		);
-		$this->action = 'crew';
+		$this->action = 'volunteer';
 
-		return BootstrapForm::create($this, 'CrewForm', $fields, $actions)->setLayout("horizontal");
+		return BootstrapForm::create($this, 'CrewForm', $fields, $actions)->addExtraClass('module')->setLayout("horizontal");
 	}
 	
 	public function doCrewRequest($data, $form, $request) {
@@ -67,7 +66,7 @@ class Contact_controller extends Page_Controller {
 		$entry->update($data);
 		$entry->write();
 
-		return $this->customise(array('Content'=>'<div class="alert alert-success">Thanks. You are on the list! We will be in touch shortly. Thanks for your support!</div>'))->render();
+		return $this->customise(array('Form'=>'<div class="alert alert-success">Thanks. You are on the list! We will be in touch shortly. Thanks for your support!</div>'))->render();
 	}
 
 
@@ -79,7 +78,7 @@ class Contact_controller extends Page_Controller {
 			FormAction::create('doTicketsRequest', 'Sign Me Up!')->setStyle("danger")->setSize("action")
 		);
 		$this->action = 'tickets';
-		return BootstrapForm::create($this, 'TicketsForm', $fields, $actions)->setLayout("horizontal");
+		return BootstrapForm::create($this, 'TicketsForm', $fields, $actions)->addExtraClass('module')->setLayout("horizontal");
 	}
 
 	public function doTicketsRequest($data, $form, $request) {
@@ -89,7 +88,7 @@ class Contact_controller extends Page_Controller {
 		$entry->update($data);
 		$entry->write();
 
-		return $this->customise(array('Content'=>'<div class="alert alert-success">Thanks. You are on the list! We will be in touch shortly when tickets go on sale!</div>'))->render();
+		return $this->customise(array('Form'=>'<div class="alert alert-success">Thanks. You are on the list! We will be in touch shortly when tickets go on sale!</div>'))->render();
 	}
 
 	public function AuditionForm() {
@@ -107,7 +106,7 @@ class Contact_controller extends Page_Controller {
 		}
 		$entry->update($data);
 		$entry->write();
-		return $this->customise(array('Content'=>'<div class="alert alert-success">Thanks. You are on the list! We will be sending out Audition Packs and registration info 6 weeks before auditions. Good Luck!</div>'))->render();
+		return $this->customise(array('Form'=>'<div class="alert alert-success">Thanks. You are on the list! We will be sending out Audition Packs and registration info 6 weeks before auditions. Good Luck!</div>'))->render();
 	}
 
 	

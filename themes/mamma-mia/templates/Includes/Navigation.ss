@@ -1,5 +1,5 @@
 
-<nav class="ribbon one greedy">
+<nav class="ribbon one greedy" id="content">
 
 	<div class="bk l">
 		<div class="arrow top"></div> 
@@ -10,11 +10,13 @@
 
 	<div class="ribbon-main">
 		<div>
-			<ul class="buy"><li class="book pull-right"><a href="/tickets" class="btn-danger">BOOK NOW!</a></li></ul> 
+			<% if TicketsForSale %>
+				<ul class="buy"><li class="book pull-right"><a href="/tickets" class="btn-danger">BOOK NOW!</a></li></ul> 
+			<% end_if %>
 			<ul class="links">
 				<% loop $Menu(1) %>
 					<li class="menu-item <% if LinkOrSection = section %>active<% end_if %>">
-						<a href="$Link" title="$Title.XML">
+						<a href="$Link<% if Title != Home %>#content<% end_if %>" title="$Title.XML">
 							$MenuTitle.XML
 							<% if LinkOrSection = section %>
 								<span class="sr-only">

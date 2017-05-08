@@ -3,7 +3,7 @@
 <% loop $SubMenu %>
 		<li class="$Class">
 			<div class="ribbon-main">
-				<a href="$HREF">$Title</a>
+				<a href="$HREF#<% if Hash %>$Hash<% else %>content<% end_if %>">$Title</a>
 			</div>
 		</li>
 <% end_loop %>

@@ -24,7 +24,7 @@
 		<div class="col-xs-9 col-md-7">$Showbiz</div>
 
 		<div class="col-xs-3 col-md-5">
-			<img class="img-responsive" src="/showbiz-large.png" />
+			<img class="img-responsive" src="/assets/showbiz-large.png" />
 		</div>
 	</div>	
 	

@@ -8,6 +8,20 @@ and open the template in the editor.
     Author     : o0BAMBAM0o
 */
 
+.module h1, .module .h1,
+.module h2, .module .h2,
+.module h3, .module .h3,
+.module h4, .module .h4,
+.module h5, .module .h5 {
+	color:white;
+}
+
+.content > h1 {
+	margin-top:0;
+}
+
+
+
 ul  {
 	-webkit-padding-start: 0px;
 }
@@ -17,6 +31,14 @@ body {
 	overflow-x:hidden;
 	max-width:100%;
 
+}
+
+.top-fixed {
+	position:fixed;
+	top:0;
+	width:100%;
+	padding:10px;
+	background-color:red;
 }
 
 .modal-dialog {width:75%;}
@@ -82,7 +104,7 @@ header h1 span {
 	font-size:104%;
 }
 
-header img.showbiz  {
+header .showbiz img  {
 	margin-top: -36px;
 }
 
@@ -670,16 +692,16 @@ h1 small {
     padding: 5px;
     margin-top: 30px;
     position: relative;
+	text-align: center;
+
 }
 .actions h2 {
 	position: relative;
     top: -25px;
     margin: 0 auto -20px;
-    width: 50%;
-    display: block;
+    display: inline-block;
     background: #178acc;
-    left: 0;
-    text-align: center;
+	padding:0 6px;
 }
 .actions p {
 	background-color: rgba(255,255,255, 0.75);
@@ -687,6 +709,12 @@ h1 small {
 	margin:0;
     border-radius: 2px;
     border: 1px solid rgba(0,0,0,0.1);
+	text-align:left;
+}
+
+.actions a {
+	color:#50B2EA;
+	font-weight:bold;
 }
 
 blockquote, .blockquote-reverse {
@@ -878,6 +906,39 @@ article h4::first-letter, article p::first-letter {
 }
 
 @media all and (max-width: 768px) {
+	
+	.curtain {
+		display:none;
+	}
+	
+	.squeeze {
+		width:94%;
+	}
+	
+	#return-to-top {
+		color:white;
+	}
+	
+	.ribbon.fixed .ribbon-main {
+		width: 96%;
+		left: 46.3%;
+	}
+	
+	.ribbon.fixed .skew.l {
+		left:1.2%;
+	}
+	
+	.ribbon.fixed .skew.r {
+		right:2.6%;
+	}
+	
+	.ribbon.fixed .bk.l {
+		left:-10px;
+	}
+	.ribbon.fixed .bk.r {
+		right:-6px;
+	}
+	
 	.bio-page .bio-heading {
 		width:100%;
 		float:none !important;
@@ -950,7 +1011,7 @@ article h4::first-letter, article p::first-letter {
 }
 .curtain {
 	position: absolute;
-    height: 200rem;
+    height: 100rem;
     width: 25%;
     background: url(../images/curtain.png) right -60px no-repeat;
     top: 0;
@@ -1133,7 +1194,8 @@ article h4::first-letter, article p::first-letter {
 }
 
 .jumbotron {
-	background: url(/showpic.jpg);
+	background: url(/assets/showpic.jpg);
+	padding:30px;
 }
 
 .jumbotron h1, .jumbotron p  {color:white;}
@@ -1257,16 +1319,6 @@ article h4::first-letter, article p::first-letter {
 }
 
 @media all and (max-width: 768px) {
-	
-	.by-line {
-		margin-bottom:-19px;
-	}
-	
-	.by-line .showbiz, .by-line .headline-sponsor {
-		position:absolute;
-		top:10px;
-		left:0;
-	}
 	
 	.skew.l {
 		left: 5%;

@@ -3,17 +3,37 @@
 		<div class="row">
 			<div class="col-md-12">
 				<a href="#" class="thumbnail">
-					<img src="/showpic.jpg" alt="..." />
+					<img src="/assets/showpic.jpg" alt="..." />
+				</a>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="thumbnail">
+					<img src="/assets/showpic.jpg" alt="..." />
+				</a>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="thumbnail">
+					<img src="/assets/showpic.jpg" alt="..." />
+				</a>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="thumbnail">
+					<img src="/assets/showpic.jpg" alt="..." />
+				</a>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="thumbnail">
+					<img src="/assets/showpic.jpg" alt="..." />
 				</a>
 			</div>
 		</div>
 	</div>
 	<div class="col-md-4">
 		<% loop $Sections %>
-		<div class="actions">
+		<article class="actions">
 			<h2>$Title</h2>
 			$Body
-		</div>	
+		</article>	
 		<% end_loop %>
 	</div>
 </div>
