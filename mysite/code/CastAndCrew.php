@@ -24,9 +24,19 @@ class CastAndCrew extends Page {
         ));
         // Create a gridfield to hold the student relationship
         $sectionField = new GridField(
-            'CastMember', // Field name
-            'CastMembers', // Field title
-            $this->Cast(),
+            'CreativeMember', // Field name
+            'CreativeMembers', // Field title
+            $this->Creative(),
+            $config
+        );
+        // Create a tab named "Students" and add our field to it
+        $fields->addFieldToTab('Root.Main', $sectionField);
+
+		// Create a gridfield to hold the student relationship
+        $sectionField = new GridField(
+            'CrewMember', // Field name
+            'CrewMembers', // Field title
+            $this->Crew(),
             $config
         );
         // Create a tab named "Students" and add our field to it
