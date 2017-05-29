@@ -159,7 +159,7 @@ class Tickets_Controller extends Page_Controller {
 		$html = '';
 		foreach($this->sections as $section=>$details) {
 
-			$html .= sprintf('<div class="ticket-section ticket-section-%s ticket-price-group-%s %s">',$section,$details['PriceGroup'],$details['Class']);
+			$html .= sprintf('<div class="ticket-section ticket-section-%s ticket-price-group-%s %s" data-toggle="tooltip" title="%s" data-placement="bottom" >',$section,$details['PriceGroup'],$details['Class'],str_replace('T','Tier ',str_replace('F','Floor ',$section )));
 			if(!isset($details['Structure'])) {
 				$details['Structure'] = array_fill(1, $details['Rows'], $details['Width']);
 			}
@@ -175,7 +175,7 @@ class Tickets_Controller extends Page_Controller {
 				$fill = array_fill(0, $seats, 1);
 					foreach($fill as $seat=>$valid) {
 						$seatNumber = $details['StartSeat'] + $seat;
-						$html .= sprintf('<span class="ticket-seat ticket-seat-%s %s" data-toggle="tooltip" title="%s%02d"></span>',"$section-{$topRow}$seatNumber", $valid ? '' : 'disabled', strtoupper($topRow),$seatNumber);
+						$html .= sprintf('<span class="ticket-seat ticket-seat-%s %s" data-toggle="tooltip" title="%s%02d" ></span>',"$section-{$topRow}$seatNumber", $valid ? '' : 'disabled', strtoupper($topRow),$seatNumber);
 					}
 				$html .= '</div>';
 			}

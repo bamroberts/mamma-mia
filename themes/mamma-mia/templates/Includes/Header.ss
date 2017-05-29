@@ -26,9 +26,11 @@
 	<div class="col-md-6 right">
 		<h1>QUEENSTOWN<span><small id="location" class="text-muted">8th - 11th Nov 2017<br /><small class="text-muted">Queenstown Event Centre</small></small><% with $SiteConfig %><% if TicketsForSale %><a href="$TicketsURL" class="btn btn-danger btn-sm" target="_blank">Book Now</a><% end_if %><% end_with %></span></h1>
 		<div class="row text-center by-line">
+			<div class="col-xs-5 col-xs-offset-3"><img class="img-responsive showbiz-logo" src="/assets/showbiz-large.png" /></div>
+<!--
 			<p class="h4 hidden-xs">BROUGHT TO YOU BY</p>
-			<div class="col-xs-5 showbiz"><img class="img-responsive showbiz-logo" src="/assets/showbiz-large.png" /></div>
-			<!--
+			<div class="col-xs-5 col-xs-offset-3 showbiz"><img class="img-responsive showbiz-logo" src="/assets/showbiz-large.png" /></div>
+			
 			<div class="col-sm-2 hidden-xs amp"><span class="h1 amp">&amp;</span></div>
 			<div class="col-xs-5 headline-sponsor"><img class="img-responsive" src="/assets/Remarkables-Park-Large.png" /></div>
 			-->

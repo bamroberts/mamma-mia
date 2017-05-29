@@ -42,6 +42,8 @@ class SelectionGroup extends CompositeField {
 
 		$selectionItems = array();
 
+		
+		if(is_array($items))
 		foreach($items as $key => $item) {
 			if($item instanceof SelectionGroup_Item) {
 				$selectionItems[] = $item;

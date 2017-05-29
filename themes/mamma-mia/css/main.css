@@ -33,6 +33,22 @@ body {
 
 }
 
+.alert h1,
+.alert h2,
+.alert h3,
+.alert h4,
+.alert h5 {
+	color:inherit;
+	margin:0;
+}
+
+.alert small {display:block;}
+.alert h2 small {
+	color:#50B2EA;
+}
+
+
+
 .top-fixed {
 	position:fixed;
 	top:0;
@@ -599,6 +615,9 @@ form label {
 .module a {
 	color:rgba(255,255,255,0.6);
 }
+.module a.btn {
+	color:inherit;
+}
 
 form.module {
 	background-color: rgba(23, 138, 204, 0.15);
@@ -863,7 +882,7 @@ article h4::first-letter, article p::first-letter {
 }
 .cast-and-crew .thumbnail {
 	padding:0;
-	border-radius: 50% 50% 50% 0;
+	/*border-radius: 50% 50% 50% 0;*/
 	-webkit-transition: border-radius 0.3s linear;
     -moz-transition: border-radius 0.3s ease;
     -ms-transition: border-radius 0.3s ease;
@@ -1035,11 +1054,21 @@ article h4::first-letter, article p::first-letter {
 	right:0;
 }
 
+.perfomances h3 {margin-top: 9px;}
+.perfomances h4 {margin-bottom:0;}
+
+.perfomances p {font-weight:bold;}
+
+
 .tickets {
 	border:1px solid black;
 	padding:8px;
-	max-width:384px;
+	
 }
+
+.tickets h3 {margin:0;}
+.tickets .seating-plan {margin:0 auto;}
+.tickets .seats {width:355px;  clear:both;}
 
 .ticket-seat {
     width: 3px;
@@ -1048,6 +1077,12 @@ article h4::first-letter, article p::first-letter {
     border: 1px solid transparent;
     cursor: pointer;   
 	margin:1px 1px 0 0;
+}
+
+.key {font-weight:bold;}
+.key .ticket-seat {
+	width:12px;
+	height:12px;
 }
 
 .ticket-price-group-A .ticket-seat {
@@ -1107,7 +1142,6 @@ article h4::first-letter, article p::first-letter {
 
 .ticket-section.no-top-margin {
 	margin-top:0;
-	padding-top:1px;
 	border-radius:0 0 5px 5px;
 }
 
@@ -1164,12 +1198,13 @@ article h4::first-letter, article p::first-letter {
 }
 
 .ticket-section-T3 {
-	margin-left:14%;
+	margin-left:18%;
 }
 
 .ticket-section-T1, 
 .ticket-section-T2 {
 	margin-top:16px; 
+	top:14px;
 }
 
 .ticket-section-T5, 
@@ -1180,6 +1215,7 @@ article h4::first-letter, article p::first-letter {
 .ticket-section-F4,
 .ticket-section-F5 { 
 	margin-left:5px;
+	top:8px;
 }
 
 .ticket-section-T5 {
@@ -1187,7 +1223,7 @@ article h4::first-letter, article p::first-letter {
 }
 
 .ticket-section-F1 {
-	margin-left:16px;
+	margin-left:30px;
 }
 
 .ticket-section-F1,

@@ -1,9 +1,11 @@
 <br />
+<% if test %>
 <div class="jumbotron">
   <h1>Headline Sponsor</h1>
   <p>Why we love these guys!</p>
   <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 </div>
+
 <div class="alert btn-warning">
 	<h4>We still have sponsorship oportinites avaialble. <a href="#sponsor" class="btn btn-default pull-right">Find out more</a></h4>
 </div>
@@ -52,8 +54,12 @@
 	<% end_if %>	
 </div>	
 <br />
+<% end_if %>
+
 <article id="sponsor" class="alert alert-info">
 	$Content
+	<br />
+	<p class="text-center"><a class="btn btn-default" href="/assets/Mamma-Mia-Sponsorship-Booklet.pdf" ><i class="fa fa-file-pdf-o fa-4x text-danger" aria-hidden="true"> </i> Mamma Mia! Sponsor Info Pack <i class="fa fa-download fa-2x" aria-hidden="true"> </i></a></p>
 	<br />
 	<a href="/contact/" class="btn btn-action btn-danger">Get in contact</a>
 </article>

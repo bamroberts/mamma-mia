@@ -1,4 +1,5 @@
 <% if $Form %>
+	$FormHeader
 	$Form
 <% else %>
 	$Content

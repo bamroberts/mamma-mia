@@ -17,6 +17,8 @@ class Partners extends Page {
 		'Sponsors' => 'Sponsor'
 	);
 
+	public $hideSponsors = false;
+
 	public function Headline() {
 		return $this->byTier('Headline')->First();
 	}
