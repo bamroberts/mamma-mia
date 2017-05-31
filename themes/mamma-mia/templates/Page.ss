@@ -15,11 +15,6 @@
 			<div class="squeeze pad">
 				<% include Header %>	
 			</div>
-			<% if CurrentMember %>
-				<% include Navigation %>
-			<% else %>
-				<div class="squeeze alert btn-danger">The Mamma Mia Queenstown Microsite isn't quite ready yet. If you are seeing this page though it means its only days away. Check back soon!!!</div>
-			<% end_if %>
 			<% if $Title = Home %>
 				<div class="squeeze alert btn-danger">
 					<h2>
