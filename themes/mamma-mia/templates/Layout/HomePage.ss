@@ -1,9 +1,10 @@
 <div class="module row spaced">
 	<div class="col-md-8">
 		<div class="row">
-			<div class="col-xs-12">
+			<% include Slideshow %>
+<!--			<div class="col-xs-12">
 				<div class="thumbnail"><img class="img-responsive" src="/assets/showpic.jpg" alt="..." /></div>
-			</div>
+			</div>-->
 		</div>
 	</div>
 	<div class="col-md-4">

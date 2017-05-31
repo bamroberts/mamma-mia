@@ -47,7 +47,10 @@ body {
 	color:#50B2EA;
 }
 
-
+.carousel-indicators {
+    bottom: 0px;
+    left: 6rem;
+}
 
 .top-fixed {
 	position:fixed;
