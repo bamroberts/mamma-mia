@@ -215,7 +215,7 @@ class Contact_controller extends Page_Controller {
 			$audition .= "<li><b>$key:</b> $value</li>";
 		}
 		$audition .= '</ul>';
-		$auditionEmail = new Email('server@mamma-mia-queenstown.com', 'mamma-mia@showbizqt.co.nz', 'New Audition Request', $audition);
+		$auditionEmail = new Email('server@mamma-mia-queenstown.com', 'mamma-mia@showbizqt.co.nz', "New Audition Request for {$data['FirstName']} {$data['Surname']}", $audition);
 		$auditionEmail->send();
 
 		//Send email to them
