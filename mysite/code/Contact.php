@@ -167,7 +167,7 @@ class Contact_controller extends Page_Controller {
 		$fields->push(new DropdownField('DanceWorkshop1', 'Dance Workshop 1', $danceSlots));
 		$fields->push(new DropdownField('DanceWorkshop2', 'Dance Workshop 2', $danceSlots));
 
-		$fields->push(new Textareafield('comments','Any additional comments?'));
+		$fields->push(new Textareafield('Comment','Any additional comments?'));
 
 		$actions = FieldList::create(
 			FormAction::create('doAuditionRequest', 'Register for Auditions!')->addExtraClass("btn-danger")->addExtraClass("btn-action")
@@ -215,7 +215,7 @@ class Contact_controller extends Page_Controller {
 			$audition .= "<li><b>$key:</b> $value</li>";
 		}
 		$audition .= '</ul>';
-		$auditionEmail = new Email('mamma-mia@showbizqt.co.nz', 'mamma-mia@showbizqt.co.nz', 'New Audition Request', $audition);
+		$auditionEmail = new Email('server@mamma-mia-queenstown.com', 'mamma-mia@showbizqt.co.nz', 'New Audition Request', $audition);
 		$auditionEmail->send();
 
 		//Send email to them
