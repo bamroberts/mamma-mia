@@ -150,7 +150,6 @@ jQuery(document).ready(function($){
 
     // Get instant state
     availableSpace = $vlinks.width() - ($btn.width() + 155);
-	console.log(availableSpace);
     numOfVisibleItems = $vlinks.children().length;
     requiredSpace = breakWidths[numOfVisibleItems - 1];
 

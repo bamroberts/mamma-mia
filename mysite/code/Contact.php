@@ -184,8 +184,7 @@ class Contact_controller extends Page_Controller {
 		if(!$entry = Audition::get()->filter(array('Email'=> $data['Email']))->first()){
 			$entry = new Audition();
 		}
-		$entry->update($data);
-		$entry->write();
+		
 
 		if(is_array($dateFields = $data[$data['Date']])) {
 			$data =	array_merge($data, $dateFields);
@@ -206,6 +205,9 @@ class Contact_controller extends Page_Controller {
 		}
 
 		unset($data['2017-07-07'],$data['2017-07-08'],$data['2017-07-09'],$data['url'],$data['SecurityID'],$data['action_doAuditionRequest']);
+
+		$entry->update($data);
+		$entry->write();
 
 		//Send email to us
 		$audition = "<h3>New Audtion request:</h3><ul>";
@@ -262,13 +264,14 @@ class Crew extends MailingList {
 
 class Audition extends MailingList {
 	static $db = array(
-		'Height' => 'Varchar',
-		'Gender' => 'Enum("Male,Female")',
+
 		'Date' => 'Date',
-		'TimeSlot' => 'Varchar',
+		'Time' => 'Varchar',
 		'Role' => 'Varchar',
 		'Reason' => 'Text',
-		'Comment' => 'Text'
+		'Comment' => 'Text',
+		'DanceWorkshop1' => 'Varchar',
+		'DanceWorkshop2' => 'Varchar',
 
 	);
 }
