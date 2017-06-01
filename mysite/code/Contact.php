@@ -262,6 +262,20 @@ class Crew extends MailingList {
 		'FoH' => 'Boolean',
 		'Props' => 'Boolean',
 	);
+
+	static $casting = array(
+		'AreasOfInterest' => 'varchar'
+	);
+
+	public function getAreasOfInterest() {
+		$set = array();
+		foreach(self::$db as $area=>$type) {
+			if($this->$area) {
+				$set[] = $area;
+			}
+		}
+		return join($set,', ');
+	}
 }
 
 class Audition extends MailingList {
@@ -276,4 +290,9 @@ class Audition extends MailingList {
 		'DanceWorkshop2' => 'Varchar',
 
 	);
+
+	private static $summary_fields = array(
+		 "Date.Nice" => "Date"
+	);
+
 }
