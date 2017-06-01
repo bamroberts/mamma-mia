@@ -88,6 +88,7 @@ class Contact_controller extends Page_Controller {
 				'Lighting' => 'Lighting',
 				'Bar' => 'Bar',
 				'FoH' => 'Front of House',
+				'Props' => 'Props'
 			))
 		);
 
@@ -259,6 +260,7 @@ class Crew extends MailingList {
 		'Lighting' => 'Boolean',
 		'Bar' => 'Boolean',
 		'FoH' => 'Boolean',
+		'Props' => 'Boolean',
 	);
 }
 
