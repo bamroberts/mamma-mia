@@ -80,4 +80,14 @@ class CMSAuditions extends LeftAndMain implements PermissionProvider{
 
 		return $form;
 	}
+
+	public function providePermissions() {
+		$title = _t("CMSAuditions.MENUTITLE", LeftAndMain::menu_title_for_class($this->class));
+		return array(
+			"CMS_ACCESS_CMSAuditions" => array(
+				'name' => _t('CMSMain.ACCESS', "Access to '{title}' section", array('title' => $title)),
+				'category' => _t('Permission.CMS_ACCESS_CATEGORY', 'CMS Access')
+			)
+		);
+	}
 }
