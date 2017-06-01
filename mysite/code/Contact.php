@@ -248,6 +248,10 @@ class MailingList extends DataObject {
 		'Email' => 'Varchar(255)',
 		'Phone' => 'Varchar(10)',
 	);
+
+	public function canView() {
+		return true;
+	}
 }
 
 class Crew extends MailingList {
