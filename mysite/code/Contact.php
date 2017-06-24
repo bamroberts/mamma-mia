@@ -11,7 +11,7 @@ class Contact extends Page {
 
 class Contact_controller extends Page_Controller {
 
-	private static $allowed_actions = array('tickets','volunteer','audition','TicketsForm','CrewForm','AuditionForm');
+	private static $allowed_actions = array('tickets','volunteer','audition','TicketsForm','CrewForm','AuditionForm','EmailBen');
 
 	public function Tickets() {
 		return $this->render(array(
@@ -136,10 +136,12 @@ class Contact_controller extends Page_Controller {
 		$fields = $this->baseForm();
 
 		$mainTimeslots = array();
-		for($i; $i<8; $i++) {
+		for($i; $i<7; $i++) {
+			if($i == 2) {continue;}
 			$time = ltrim(date('ha', strtotime('' . ($i+10) .':00')),'0') . '-' . ltrim(date('ha', strtotime('' . ($i+11) .':00')),'0');
 			$mainTimeslots[$time]=$time;
 		}
+
 		$fields->push(
 			$date = new SelectionGroup(
 				'Date',
@@ -227,6 +229,12 @@ class Contact_controller extends Page_Controller {
 		return $this->customise(array('Form'=>'<div class="alert alert-success">Thanks ' . $data['FirstName'] . '. You are on the list! We will be in touch shortly to confirm your audition time slot. Good Luck!</div>'))->render();
 	}
 
+	public function EmailBen() {
+		$body = $file = file_get_contents(BASE_PATH .'/assets/Showbiz Queenstown - May newsletter.html');
+		$email = new Email('mamma-mia@showbizqt.co.nz', 'ben.roberts@showbizqt.co.nz', 'Showbiz Queenstown - June Newsletter', $body);
+		$email->send();
+		echo $body;
+	}
 	
 
 	function SubMenu() {
@@ -246,7 +254,7 @@ class MailingList extends DataObject {
 		'FirstName' => 'Varchar(50)',
 		'Surname' => 'Varchar(50)',
 		'Email' => 'Varchar(255)',
-		'Phone' => 'Varchar(10)',
+		'Phone' => 'Varchar(20)',
 	);
 
 	public function canView() {
