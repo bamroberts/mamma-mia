@@ -1653,6 +1653,7 @@ form.member-profile-form {
 .cms {
 	.cms-panel-padded {
 		padding: 0 $grid-x*2 $grid-y*1.5;
+		overflow:scroll;
 
 		&.ReportAdmin {
 			> fieldset {

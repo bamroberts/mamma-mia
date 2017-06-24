@@ -845,7 +845,7 @@ form.member-profile-form #Permissions .optionset li { float: none; width: auto; 
 .cms-panel .collapsed-flyout { display: block !important; left: 41px; margin-top: -40px; position: fixed; width: 191px; }
 .cms-panel .collapsed-flyout li a span { display: block !important; }
 
-.cms .cms-panel-padded { padding: 0 16px 12px; }
+.cms .cms-panel-padded { padding: 0 16px 12px; overflow:scroll;}
 .cms .cms-panel-padded.ReportAdmin > fieldset { padding-top: 12px; }
 
 .CMSPageAddController .cms-panel-padded { padding: 16px 16px; }
