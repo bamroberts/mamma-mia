@@ -5,6 +5,7 @@
  * @author o0BAMBAM0o
  */
 class HomePage extends Page {
+	
 	static $has_many = array(
 		'Sections' =>	'HomePageSection',
 		'CaroselImages' => 'HomePageImages'

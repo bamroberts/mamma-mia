@@ -15,15 +15,16 @@
 			<div class="squeeze pad">
 				<% include Header %>	
 			</div>
+			<% include Navigation %>	
 			<% if $Title = Home %>
-				<div class="squeeze alert btn-danger">
+<!--				<div class="squeeze alert btn-danger">
 					<h2>
 						
 						Audition registration is now open! 
 						<a class="btn btn-primary pull-right" href="/contact/audition#content">Find out more</a>
 						<br><small>Download the audition pack now and register to be part of this amazing show!</small>
 					</h2>
-				</div>
+				</div>-->
 			<% end_if %>
 			<div class="squeeze main-block">
 				<% if $Title != Home %>

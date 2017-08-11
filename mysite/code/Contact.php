@@ -20,6 +20,7 @@ class Contact_controller extends Page_Controller {
 	}
 
 	public function Audition() {
+		return $this->render(array('Form'=>'<div class="alert alert-warning">Auditions have now closed. We look forwards to seeing you at the show!</div>'));
 		$header = '<div class="alert alert-success">
 
 							<h2>Auditions for Mamma Mia! are now open!</h2>
@@ -240,7 +241,7 @@ class Contact_controller extends Page_Controller {
 	function SubMenu() {
 		return new arrayList(array(
 			new ArrayData(array('Title'=>'Contact','HREF'=>$this->Link(),'Class'=>$this->action == 'index' ? 'active' : '')),
-			new ArrayData(array('Title'=>'Audition','HREF'=>$this->Link($url = 'audition'),'Class'=>$this->action == $url ? 'active' : '')),
+			//new ArrayData(array('Title'=>'Audition','HREF'=>$this->Link($url = 'audition'),'Class'=>$this->action == $url ? 'active' : '')),
 			new ArrayData(array('Title'=>'Ticket Mailing List','HREF'=>$this->Link($url = 'tickets'),'Class'=>$this->action == $url ? 'active' : '')),
 			new ArrayData(array('Title'=>'Volunteer','HREF'=>$this->Link($url = 'volunteer'),'Class'=>$this->action == $url ? 'active' : '')),
 			)

@@ -1,16 +1,16 @@
 var cumulativeOffset = function(element) {
-				var top = 0, left = 0;
-				do {
-					top += element.offsetTop  || 0;
-					left += element.offsetLeft || 0;
-					element = element.offsetParent;
-				} while(element);
+	var top = 0, left = 0;
+	do {
+		top += element.offsetTop  || 0;
+		left += element.offsetLeft || 0;
+		element = element.offsetParent;
+	} while(element);
 
-				return {
-					top: top,
-					left: left
-				};
-			};
+	return {
+		top: top,
+		left: left
+	};
+};
 			
 			var left = document.getElementsByClassName('curtain')[0];
 			var right = document.getElementsByClassName('curtain')[1];
@@ -65,7 +65,11 @@ var cumulativeOffset = function(element) {
 				}, 10);
 			}
 			
-			jQuery('#return-to-top').on('click', function() {
+//			document.getElementById('return-to-top').addEventListener('click', function() {
+//				scrollTo(document.body, 0, 600);
+//			});
+			
+			jQuery('body').on('click', '.return-to-top', function() {
 				scrollTo(document.body, 0, 600);
 			});
 			

@@ -1071,7 +1071,7 @@ article h4::first-letter, article p::first-letter {
 
 .tickets h3 {margin:0;}
 .tickets .seating-plan {margin:0 auto;}
-.tickets .seats {width:355px;  clear:both;}
+.tickets .seats {width:365px;  clear:both;}
 
 .ticket-seat {
     width: 3px;
