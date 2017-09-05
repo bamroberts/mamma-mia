@@ -1,4 +1,3 @@
-<br /><div class="alert alert-success"><a class="btn btn-primary pull-right" href="/contact/tickets/#content">Sign up now</a><h3>Tickets aren't on general release just yet.<small> Make sure you join our mailing list to get the latest news and possibly early bird ticket invites :)</small></h3></div>
 <div class="tickets module clearfix pull-right">
 	
 	<div class="key pull-right">
@@ -21,7 +20,7 @@
 	<h3>Performances</h3>
 	<ul class="list-unstyled">
 		<% loop Perfomances %>
-		<li><h4>$Time.Nice - $Date.Nice</h4><p>Adult <span title="Adult Standard Seat" data-toggle="tooltip">${$AdultB}</span> - <span title="Adult Premium Seat" data-toggle="tooltip">${$AdultA}</span> | Child <span title="Child Standard Seat" data-toggle="tooltip">${$ChildB}</span> - <span title="Child Premium Seat" data-toggle="tooltip">${$ChildA}</span>
+		<li><h4>$Time.Nice - $Date.Nice</h4><p>Adult <span title="Adult Standard Seat" data-toggle="tooltip">${$AdultB}</span> - <span title="Adult Premium Seat" data-toggle="tooltip">${$AdultA}</span> | Child <span title="Child Standard Seat" data-toggle="tooltip">${$ChildB}</span> - <span title="Child Premium Seat" data-toggle="tooltip">${$ChildA}</span> <a class="btn btn-danger btn-xs" href="https://www.eventfinda.co.nz/2017/mamma-mia/queenstown/tickets" target="_blank">Book Now!</a></p></li>
 		<% end_loop %>
 	</ul>
 </div>

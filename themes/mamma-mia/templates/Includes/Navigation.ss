@@ -12,7 +12,7 @@
 		<div>
 			<% with $SiteConfig %>
 			<% if TicketsForSale %>
-				<ul class="buy"><li class="book pull-right"><a href="/tickets" class="btn-danger">BOOK NOW!</a></li></ul> 
+				<ul class="buy"><li class="book pull-right"><a href="$TicketsURL" class="btn-danger">BOOK NOW!</a></li></ul> 
 			<% end_if %>
 			<% end_with %>
 			<ul class="links">

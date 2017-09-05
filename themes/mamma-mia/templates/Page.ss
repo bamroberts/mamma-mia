@@ -17,14 +17,14 @@
 			</div>
 			<% include Navigation %>	
 			<% if $Title = Home %>
-<!--				<div class="squeeze alert btn-danger">
+				<div class="squeeze alert btn-danger">
 					<h2>
 						
-						Audition registration is now open! 
-						<a class="btn btn-primary pull-right" href="/contact/audition#content">Find out more</a>
-						<br><small>Download the audition pack now and register to be part of this amazing show!</small>
+						Tickets now on sale!
+						<a class="btn btn-primary pull-right" href="https://www.eventfinda.co.nz/2017/mamma-mia/queenstown/tickets">Book Now!</a>
+						<br><small>Get in quick for the very best seats to the biggest must-see show in Queenstown.</small>
 					</h2>
-				</div>-->
+				</div>
 			<% end_if %>
 			<div class="squeeze main-block">
 				<% if $Title != Home %>
