@@ -1,4 +1,3 @@
-<br /><div class="alert alert-success"><a class="btn btn-primary pull-right" href="/contact/tickets/#content">Sign up now</a><h3>Tickets aren't on general release just yet.<small> Make sure you join our mailing list to get the latest news and possibly early bird ticket invites :)</small></h3></div>
 <div class="tickets module clearfix pull-right">
 	
 	<div class="key pull-right">
